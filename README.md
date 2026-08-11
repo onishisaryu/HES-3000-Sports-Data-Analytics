@@ -33,25 +33,24 @@ sports-performance-analytics/
 
 ## Tentative Schedule
 
-| Week | Core Theme / Topic | Key Deliverables |
-| :--- | :--- | :--- |
-| **Week 1** | Intro to Sports Analytics | |
-| **Week 2** | Asking Good Questions | |
-| **Week 3** | Data Collection, Quality & Cleaning | Case Study 1 Due |
-| **Week 4** | Descriptive Statistics & Comparing Means | |
-| **Week 5** | Data Visualization Principles & Reporting | Case Study 2 Due |
-| **Week 6** | Review & Midterm Exam 1 | **Exam 1** |
-| **Week 7** | Exploring Relationships & Correlation | Group Project Intro |
-| **Week 8** | Simple Linear Regression & Prediction | Case Study 3 Due |
-| **Week 9** | Model Limits & Decision-Making Frameworks | |
-| **Week 10** | Applied Scouting & Training Decisions | |
-| **Week 11** | Applied Strategy Decisions & Expected Value (EV) | Case Study 3 Due |
-| **Week 12** | Analytics Challenges & In-Class Work | Case Study 4 Due |
-| **Week 13** | Special Topics & Buffer Session | |
-| **Week 14** | Group Project Working Sessions | |
-| **Week 15** | Final Presentations | **Group Project Presentations** |
-| **Week 16** | Final Exam Review | |
-| **Finals Week** | Final Exam & Wrap-Up | **Final Exam** |
+| Week | Core Theme / Topic |
+| :--- | :--- |
+| Week 1 | Intro to Sports Analytics |
+| Week 2 | Asking Good Questions |
+| Week 3 | Data Collection, Quality & Ethics |
+| Week 4 | Descriptive Statistics & Comparing Means |
+| Week 5 | Data Visualization Taxonomy |
+| Week 6 | Review & Midterm Exam 1 |
+| Week 7 | Exploring Relationships & Correlation |
+| Week 8 | Simple Linear Regression & Prediction |
+| Week 9 | Model Limits & Decision-Making Frameworks |
+| Week 10 | Applied Scouting & Training Decisions |
+| Week 11 | Applied Strategy Decisions & Expected Value (EV) |
+| Week 12 | Analytics Challenges |
+| Week 13 | Special Topics & Buffer Session |
+| Week 14 | Group Project Working Sessions |
+| Week 15 | Final Presentations |
+| Week 16 | Final Exam Review & Wrap-Up |
 
 ---
 
