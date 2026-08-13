@@ -1,0 +1,154 @@
+---
+title: "Lecture 1"
+subtitle: "Evolution of Sports Analytics & Mapping the Landscape"
+author: Saryu Onishi
+date: HES 3000-002, Sport Performance Analytics
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: ['default', 'metropolis', 'metropolis-fonts', 'ou-colors.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+
+---
+
+class: title-slide    
+
+<br><br><br>
+
+# Lecture 1
+
+## Evolution of Sports Analytics & Mapping the Landscape
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Course Welcome & Scope
+
+- **Welcome to HES 3000-002:**
+  - Moving past business operations, ticket sales, and dynamic pricing.
+  - Focusing squarely on the pitch, court, track, and training room.
+
+- **The Core Objective:**
+  - Bridging the gap between raw data and human decision-making in sports performance.
+
+- **Our Roadmap This Semester:**
+  - Grounding ourselves in data foundations, visualization, regression, and applied decision-making across tracking, scouting, and strategy.
+
+---
+
+# The Paradigm Shift: Eye Test vs. Data
+
+- **The Traditional Mindset:** 
+  - Heavy reliance on expert intuition, scouting lore, and decades of visual confirmation.
+  - The "gut feeling" approach to training and game planning.
+
+- **The Modern Reality:** 
+  - Data doesn't replace the eye test; it **calibrates and enhances** it.
+  - Uncovering hidden patterns that human cognitive biases naturally filter out or miss.
+
+---
+
+# Interactive Exercise: The Box Score Blind Spot
+
+.pull-left[
+### Traditional Box Score
+- **Player A:** 24 Points, 4 Rebounds, 2 Assists
+- **Shooting:** 9/22 FG, 2/8 3PT
+- **Minutes:** 38
+]
+
+.pull-right[
+### The Missing Context
+- What did the box score miss?
+  - Shot quality and defensive pressure?
+  - Physical workload and fatigue accumulation?
+  - Spacing impact when off the ball?
+]
+
+.center[
+.hi[Pair & Share (5 mins):] *What is something a traditional box score completely hides that modern tracking reveals?*
+]
+
+---
+
+# Era 1: The Traditional Era (Pre-1970s)
+
+- **Characteristics:**
+    - Heavily reliant on basic box scores (batting averages, points per game, completion percentages).
+    - Anecdotal scouting reports and qualitative grading systems.
+
+- **Limitations:**
+    - Box scores capture the *what* but entirely miss the context (e.g., game state, quality of competition, spatial positioning).
+    - High susceptibility to confirmation bias and small-sample-size theater.
+
+---
+
+# Era 2: The Statistical Awakening (1970s–2000s)
+
+- **Characteristics:**
+    - Independent pioneers digging beneath standard box scores to find true indicators of success (e.g., Bill James and Sabermetrics).
+    - Shift toward efficiency ratings and adjusted metrics rather than raw counting stats.
+
+- **The *Moneyball* Effect:**
+    - Popularized the framework of exploiting market inefficiencies.
+    - Proved that analytical frameworks could compete with (and often beat) massive financial budgets.
+
+---
+
+# Era 3: The Tracking & Wearables Revolution (2010s–Present)
+
+- **Characteristics:**
+    - Proliferation of optical tracking cameras (SportVU, Hawk-Eye) and internal/external physical load monitors (GPS, Catapult, accelerometers).
+    - Real-time tracking of spatial data, player velocity, and biomechanical stress.
+
+- **The Shift:**
+    - Moving from macro-level game summaries to micro-level movement data.
+    - Quantifying fatigue and workload before soft-tissue injuries manifest.
+
+---
+
+# Mapping the Modern Sports Landscape
+
+.center[
+### The Three Pillars of Sport Performance Analytics
+]
+
+1. **Athlete Tracking (Physical & Spatial)**
+   - Monitoring external load (distance, acceleration) and internal load (heart rate, RPE) to manage training stress and prevent injuries.
+
+2. **Scouting & Talent Evaluation**
+   - Objective profiling, tracking performance trajectories, and building predictive models for athlete recruitment.
+
+3. **Strategy & Tactical Optimization**
+   - Leveraging situational probabilities and spatial efficiency to guide play-calling, defensive alignment, and game plans.
+
+---
+
+# Challenges & Cultural Friction
+
+- **The Human Element:**
+    - Analytics is only as powerful as its implementation on the ground.
+    - Pushing past cultural resistance from traditional coaches, staff, and athletes.
+
+- **Cognitive Biases:**
+    - Overcoming the "hot hand" fallacy, result bias (judging a decision solely by its outcome), and selective memory.
+
+- **Signal vs. Noise:**
+    - Avoiding data overload. Not everything that can be measured matters, and not everything that matters can be easily measured.
+
+---
+
+# Summary & Looking Ahead
+
+- **Key Takeaway:** Sports analytics is a tool for augmentation, not replacement. The goal is smarter questions and better preparation.
+
+- **Next Class (Week 1, Class 2):** Overview of the three domains (Tracking, Scouting, Strategy) and how data changes sports decisions.
+
+- **For Next Time:** Review syllabus expectations and think about a specific sports decision you've seen coaches make that you'd like to analyze with data.

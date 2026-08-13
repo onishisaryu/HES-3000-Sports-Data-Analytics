@@ -1,0 +1,175 @@
+---
+title: "Lecture 3"
+subtitle: "Translating Sports Intuition into Testable Problems"
+author: Saryu Onishi
+date: HES 3000-002, Sport Performance Analytics
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: ['default', 'metropolis', 'metropolis-fonts', 'ou-colors.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+
+---
+
+---
+
+# Week 2, Class 1: Roadmap
+
+- **Where We Are:**
+  - Last week, we mapped the evolution of sports analytics and our three core pillars (Tracking, Scouting, Strategy)[cite: 1].
+  
+- **Today's Focus:**
+  - How do we bridge the gap between abstract coaching intuition ("our defense feels slow") and a rigorous, testable analytical problem?
+
+- **The Core Rule:**
+  - Before touching a line of code or an Excel spreadsheet, you must define the exact question you are trying to answer.
+
+---
+
+# The Reality of Sports Organizations
+
+- **The Clash of Cultures:**
+  - Coaches, athletes, and traditional scouts operate on instinct, experience, and visual memory.
+  - Analysts operate on data, code, structures, and statistical probabilities.
+
+- **The Bridge:**
+  - An analyst's primary job is **not** to write complex code.
+  - An analyst's primary job is to **translate human intuition into precise, testable research questions**.
+
+---
+
+# Coaches' Language vs. Analysts' Language
+
+- **Example 1: The "Lazy" Player**
+  - *Coach:* "We need players who just have a motor and want it more."
+  - *Analyst:* "How do high-intensity acceleration counts and late-game deceleration drop-offs correlate with success rates in transition defense?"
+
+- **Example 2: The "Clutch" Performer**
+  - *Coach:* "She always steps up when the game is on the line."
+  - *Analyst:* "What is the player's true shooting percentage (TS%) relative to baseline when the point differential is $\le 5$ points in the final 4 minutes of a match?"
+
+---
+
+# The Anatomy of a Good Research Question
+
+- **Four Essential Criteria:**
+    1. **Specific:** Clear variables, explicit populations, and well-defined metrics.
+    2. **Measurable:** Backed by data that you can actually collect or access.
+    3. **Actionable:** The answer must change a real decision (training load, roster build, or in-game tactic).
+    4. **Falsifiable:** It must be possible for the data to prove your hypothesis *wrong*.
+
+---
+
+# The Danger of Vague Questions
+
+- **Why Vague Questions Fail:**
+  - "Are we playing well?" $\rightarrow$ Too broad; leads to cherry-picking stats that confirm pre-existing biases.
+  - "Why did we lose?" $\rightarrow$ Too retrospective; confounds luck, execution, and strategy into a single messy narrative.
+
+- **The Fix:**
+  - Break macro problems down into micro components across our three core domains: Tracking, Scouting, and Strategy.
+
+---
+
+# Introduction to the Question-Framing Activity
+
+- **The Challenge Ahead:**
+  - For your upcoming group projects, you will be tasked with turning a messy sports problem into a rigorous project.
+  - Today, we are going to practice this process hands-on as a class.
+
+- **The Setup:**
+  - We will look at a common scenario faced by a professional coaching staff.
+  - You will work in groups to build specific, testable questions across all three analytics domains.
+
+---
+
+# Case Study Context: The Struggling Second Half
+
+- **The Scenario:**
+  - Imagine you are hired as the performance analytics staff for a professional soccer club.
+  - **The Head Coach's Complaint:** *"Our team looks totally flat and unorganized after the 65th minute. We are getting out-run, losing tactical shape, and conceding late goals."*
+  - The coach wants you to "look at the data and fix it."
+
+- **The Trap:**
+  - Simply dumping all GPS, tracking, and match event data into a spreadsheet and looking for patterns.
+
+---
+
+# Domain 1 Focus: Tracking & Physical Load
+
+- **The Physical Hypothesis:**
+  - Late-game breakdown is caused by cumulative fatigue and poor physical load management during the week.
+
+- **Your Task (Group Discussion - 5 mins):**
+  - Translate the coach's complaint into **two testable tracking questions**.
+  - *Hint:* Think about external load (distance, accelerations), internal load (RPE, heart rate), and pacing profiles.
+
+---
+
+# Domain 2 Focus: Scouting & Roster Depth
+
+- **The Personnel Hypothesis:**
+  - Late-game failure is caused by a drop-off in bench productivity and physical sustainability relative to our opponents' substitutes.
+
+- **Your Task (Group Discussion - 5 mins):**
+  - Translate the coach's complaint into **two testable scouting/roster questions**.
+  - *Hint:* Think about player profiling, physical benchmarks for substitutes, and squad depth metrics.
+
+---
+
+# Domain 3 Focus: Strategy & Tactical Optimization
+
+- **The Tactical Hypothesis:**
+  - Late-game disorganization is caused by structural defensive shifts and poor spatial positioning when players fatigue.
+
+- **Your Task (Group Discussion - 5 mins):**
+  - Translate the coach's complaint into **two testable strategy questions**.
+  - *Hint:* Think about formation spacing, defensive recovery speed, and tactical adjustments in the final third of the match.
+
+---
+
+# Class Share-Out: Comparing Questions
+
+- **Discussion:**
+  - Let's hear what tracking, scouting, and strategy questions your groups formulated.
+  - How do these questions change the kind of data we need to pull?
+
+- **Key Takeaway:**
+  - A single coaching complaint spawns dozens of distinct analytical paths. Framing forces you to choose the *right* path before wasting hours on dead-end data exploration.
+
+---
+
+# Avoiding the "Fishing Expedition" Trap
+
+- **What is Data Fishing?**
+  - Running endless, unguided queries across massive datasets until you find a statistically significant pattern purely by random chance ($p < 0.05$).
+
+- **The Dangers:**
+  - **Spurious Correlations:** Finding relationships that look meaningful but are entirely coincidental.
+  - **Overfitting:** Building models that explain past random noise rather than future real-world performance.
+
+- **The Defense:** 
+  - Ground your analysis in domain knowledge and framed hypotheses *before* looking at the numbers.
+
+---
+
+# From Question to Data: The Next Steps
+
+- **Once the Question is Framed:**
+  - 1. Identify the exact data sources required (e.g., GPS tracking logs, event streams, optical tracking).
+  - 2. Define your unit of analysis (e.g., per player, per match, per 5-minute interval).
+  - 3. Establish your baseline expectations before running models.
+
+---
+
+# Summary & Looking Ahead
+
+- **Key Takeaway:** Great analytics doesn't start with data; it starts with a well-framed, testable question grounded in domain knowledge.
+
+- **Next Class (Week 2, Class 2):** **Project Kickoff!** We introduce group project expectations. You will begin brainstorming your initial research questions and identifying potential datasets for your semester assignments.
+
+- **For Next Time:** Come to class with two potential sports performance topics you might want to investigate for your group project.

@@ -1,0 +1,203 @@
+---
+title: "Lecture 6"
+subtitle: "The Scope of Analytics: Descriptive, Diagnostic, and Predictive"
+author: Saryu Onishi
+date: HES 3000-002, Sport Performance Analytics
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: ['default', 'metropolis', 'metropolis-fonts', 'ou-colors.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+      
+---
+
+class: title-slide    
+
+<br><br><br>
+
+# Lecture 6
+
+## The Scope of Analytics: Descriptive, Diagnostic, and Predictive
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Week 4, Class 1 Overview
+
+- **Where We Are:**
+  - After discussing data ethics and athlete privacy last week, we now turn our technical focus back toward practical analysis.
+  
+- **Today's Focus:**
+  - Defining the three primary analytical scopes in sports: **Descriptive** (what happened), **Diagnostic** (why it happened), and **Predictive** (what will happen).
+
+- **The Big Goal:**
+  - Understanding the analytical ladder so you can correctly frame your group project questions and choose the right statistical tools.
+
+---
+
+# The Analytics Value & Complexity Ladder
+
+- **Moving Up the Ladder:**
+  - As you move from descriptive questions to predictive and prescriptive models, both complexity and potential value increase—along with the risk of error.
+
+- **The Four Stages of Sports Analytics:**
+  - 1. **Descriptive:** What happened? (Box scores, season totals)
+  - 2. **Diagnostic:** Why did it happen? (Uncovering root causes, correlations)
+  - 3. **Predictive:** What is likely to happen? (Forecasting performance, injury risk)
+  - 4. **Prescriptive:** What should we do about it? (Optimal tactical or roster decisions)
+
+---
+
+# Stage 1: Descriptive Analytics (What Happened?)
+
+- **Definition:**
+  - Summarizing historical data to understand baseline performance, trends, and aggregate outputs.
+
+- **Sports Examples:**
+  - A team's final points-per-game average over a 16-game season.
+  - Total distance covered by a midfielder across 90 minutes of play.
+  - League-wide shooting percentages by zone.
+
+- **The Purpose:**
+  - Establishes a baseline of truth. Before you can explain *why* something happened, you must accurately describe *what* occurred.
+
+---
+
+# Limitations of Descriptive Analytics
+
+- **The Rearview Mirror Problem:**
+  - Descriptive analytics only tells you where you have been, never where you are going.
+  - A team can have great descriptive stats (e.g., high possession percentage) while still losing matches due to poor conversion efficiency.
+
+- **The Danger of Averages:**
+  - Relying solely on descriptive means can hide massive game-to-game variance and individual player inconsistencies.
+
+---
+
+# Stage 2: Diagnostic Analytics (Why Did It Happen?)
+
+- **Definition:**
+  - Examining data deeper to uncover root causes, patterns, and contextual drivers behind descriptive outcomes.
+
+- **Sports Examples:**
+  - *Descriptive:* Our team conceded 30% more goals in the final 15 minutes of matches.
+  - *Diagnostic:* High-speed running distance dropped by 22% in the second half for players logging $>70$ minutes, correlating with defensive structural breakdowns.
+
+- **The Purpose:**
+  - Connects physical workloads, tactical setups, and environmental factors to performance outputs.
+
+---
+
+# Diagnostic Analytics: Uncovering the Root Cause
+
+- **Moving Beyond Intuition:**
+  - Coaches often guess why a slump happened ("the players lacked focus").
+  - Diagnostic analytics uses data segmentation, comparison groups, and association metrics to find the actual driver.
+
+- **Common Diagnostic Questions:**
+  - *Did our shooting percentage drop because of better defensive pressure, or poor shot selection?*
+  - *Is this injury spike caused by training load spikes or insufficient sleep duration?*
+
+---
+
+# Stage 3: Predictive Analytics (What Will Happen?)
+
+- **Definition:**
+  - Using historical descriptive and diagnostic data, combined with statistical models, to forecast future events or performance trajectories.
+
+- **Sports Examples:**
+  - Projecting a rookie's scoring output in their second professional season.
+  - Estimating the probability that a player will suffer a soft-tissue injury based on their 3-week cumulative acute-to-chronic workload ratio.
+  - Predicting win probabilities in real-time during a live match.
+
+---
+
+# Predictive Analytics: The Reality Check
+
+- **Probability vs. Certainty:**
+  - Predictive models do not tell the future; they calculate **probabilities** based on historical patterns.
+  - Sports are inherently stochastic (random/chaotic)—unexpected injuries, weather changes, and referee decisions can break even the best models.
+
+- **The Overfitting Trap:**
+  - Building a model that predicts past data with 99% accuracy, only for it to completely fail when applied to new games.
+
+---
+
+# Which Scope is "Best"? (Spoiler: Neither)
+
+- **The Common Misconception:**
+  - Many analysts think predictive modeling is "superior" because it sounds advanced, while descriptive statistics are just "beginner stuff."
+
+- **The Real-World Reality:**
+  - **Neither is better; they serve entirely different purposes.** 
+  - If you join a professional sports team tomorrow, the absolute **first thing** you will do is descriptive work. 
+  - Not because it's the easiest, but because it is the **foundational step**. 
+
+---
+
+# Trust and the Descriptive Foundation
+
+- **Building Credibility with Coaches and Management:**
+  - Before a coach or General Manager trusts your complex machine learning model, they need to know your basic numbers match reality.
+  - If your descriptive baseline is flawed, your predictive model is just an expensive guessing machine.
+
+- **The Career Impact:**
+  - How cleanly, accurately, and clearly you execute descriptive reporting often dictates **how much trust leadership places in you** to handle deeper, more sensitive diagnostic and predictive work.
+
+---
+
+# Case Study: Building an Analytical Pipeline
+
+- **Scenario: Analyzing Team Fatigue**
+  - **Descriptive Step:** Calculate total high-speed running meters per match for all players over a season.
+  - **Diagnostic Step:** Cross-reference those distance totals with win/loss outcomes and goal differentials in the final quarter of games.
+  - **Predictive Step:** Build a simple model that flags when an upcoming starting lineup is at high risk of performance drop-off based on recent fixture congestion.
+
+---
+
+# Interactive Exercise: Categorizing the Question
+
+.pull-left[
+### The Scenario
+- Your coaching staff brings you three questions ahead of the weekend fixture:
+  1. *"How many total yards did our receivers gain last week?"*
+  2. *"Why did our passing success rate drop on third downs during away games?"*
+  3. *"What is the probability our starting quarterback gets sacked given the opponent's blitz rate?"*
+]
+
+.pull-right[
+### Your Task (Group Discussion - 5 mins)
+- Categorize each question into its correct analytical scope: **Descriptive, Diagnostic, or Predictive**.
+]
+
+.center[
+.hi[Pair & Share:] *How do these three questions require different data inputs?*
+]
+
+---
+
+# Group Share-Out: Scoping Your Project Questions
+
+- **Discussion:**
+  - How do these three tiers apply to your group project topics?
+  - Are you currently trying to answer a descriptive question, a diagnostic question, or a predictive one?
+
+- **Instructor Guidance:**
+  - For this semester project, focusing heavily on **Descriptive and Diagnostic** frameworks will keep your scope realistic and robust.
+
+---
+
+# Summary & Looking Ahead
+
+- **Key Takeaway:** Analytics is a progression. You must accurately describe data and diagnose its causes before attempting to predict the future—and mastering the basics is how you earn trust in an organization.
+
+- **Next Class (Week 4, Class 2):** We dive into **Measures of Center, Spread, and Distributions**, connecting statistical theory directly to your project datasets with an R tie-in.
+
+- **For Next Time:** Review your group project data and think about which descriptive metrics (mean, median, standard deviation) will best summarize your key variables.

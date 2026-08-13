@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 3</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Saryu Onishi" />
+    <script src="Lecture3_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="Lecture3_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="Lecture3_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="Lecture3_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="ou-colors.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Lecture 3
+]
+.subtitle[
+## Translating Sports Intuition into Testable Problems
+]
+.author[
+### Saryu Onishi
+]
+.date[
+### HES 3000-002, Sport Performance Analytics
+]
+
+---
+
+
+---
+
+# Week 2, Class 1: Roadmap
+
+- **Where We Are:**
+  - Last week, we mapped the evolution of sports analytics and our three core pillars (Tracking, Scouting, Strategy)[cite: 1].
+  
+- **Today's Focus:**
+  - How do we bridge the gap between abstract coaching intuition ("our defense feels slow") and a rigorous, testable analytical problem?
+
+- **The Core Rule:**
+  - Before touching a line of code or an Excel spreadsheet, you must define the exact question you are trying to answer.
+
+---
+
+# The Reality of Sports Organizations
+
+- **The Clash of Cultures:**
+  - Coaches, athletes, and traditional scouts operate on instinct, experience, and visual memory.
+  - Analysts operate on data, code, structures, and statistical probabilities.
+
+- **The Bridge:**
+  - An analyst's primary job is **not** to write complex code.
+  - An analyst's primary job is to **translate human intuition into precise, testable research questions**.
+
+---
+
+# Coaches' Language vs. Analysts' Language
+
+- **Example 1: The "Lazy" Player**
+  - *Coach:* "We need players who just have a motor and want it more."
+  - *Analyst:* "How do high-intensity acceleration counts and late-game deceleration drop-offs correlate with success rates in transition defense?"
+
+- **Example 2: The "Clutch" Performer**
+  - *Coach:* "She always steps up when the game is on the line."
+  - *Analyst:* "What is the player's true shooting percentage (TS%) relative to baseline when the point differential is `\(\le 5\)` points in the final 4 minutes of a match?"
+
+---
+
+# The Anatomy of a Good Research Question
+
+- **Four Essential Criteria:**
+    1. **Specific:** Clear variables, explicit populations, and well-defined metrics.
+    2. **Measurable:** Backed by data that you can actually collect or access.
+    3. **Actionable:** The answer must change a real decision (training load, roster build, or in-game tactic).
+    4. **Falsifiable:** It must be possible for the data to prove your hypothesis *wrong*.
+
+---
+
+# The Danger of Vague Questions
+
+- **Why Vague Questions Fail:**
+  - "Are we playing well?" `\(\rightarrow\)` Too broad; leads to cherry-picking stats that confirm pre-existing biases.
+  - "Why did we lose?" `\(\rightarrow\)` Too retrospective; confounds luck, execution, and strategy into a single messy narrative.
+
+- **The Fix:**
+  - Break macro problems down into micro components across our three core domains: Tracking, Scouting, and Strategy.
+
+---
+
+# Introduction to the Question-Framing Activity
+
+- **The Challenge Ahead:**
+  - For your upcoming group projects, you will be tasked with turning a messy sports problem into a rigorous project.
+  - Today, we are going to practice this process hands-on as a class.
+
+- **The Setup:**
+  - We will look at a common scenario faced by a professional coaching staff.
+  - You will work in groups to build specific, testable questions across all three analytics domains.
+
+---
+
+# Case Study Context: The Struggling Second Half
+
+- **The Scenario:**
+  - Imagine you are hired as the performance analytics staff for a professional soccer club.
+  - **The Head Coach's Complaint:** *"Our team looks totally flat and unorganized after the 65th minute. We are getting out-run, losing tactical shape, and conceding late goals."*
+  - The coach wants you to "look at the data and fix it."
+
+- **The Trap:**
+  - Simply dumping all GPS, tracking, and match event data into a spreadsheet and looking for patterns.
+
+---
+
+# Domain 1 Focus: Tracking &amp; Physical Load
+
+- **The Physical Hypothesis:**
+  - Late-game breakdown is caused by cumulative fatigue and poor physical load management during the week.
+
+- **Your Task (Group Discussion - 5 mins):**
+  - Translate the coach's complaint into **two testable tracking questions**.
+  - *Hint:* Think about external load (distance, accelerations), internal load (RPE, heart rate), and pacing profiles.
+
+---
+
+# Domain 2 Focus: Scouting &amp; Roster Depth
+
+- **The Personnel Hypothesis:**
+  - Late-game failure is caused by a drop-off in bench productivity and physical sustainability relative to our opponents' substitutes.
+
+- **Your Task (Group Discussion - 5 mins):**
+  - Translate the coach's complaint into **two testable scouting/roster questions**.
+  - *Hint:* Think about player profiling, physical benchmarks for substitutes, and squad depth metrics.
+
+---
+
+# Domain 3 Focus: Strategy &amp; Tactical Optimization
+
+- **The Tactical Hypothesis:**
+  - Late-game disorganization is caused by structural defensive shifts and poor spatial positioning when players fatigue.
+
+- **Your Task (Group Discussion - 5 mins):**
+  - Translate the coach's complaint into **two testable strategy questions**.
+  - *Hint:* Think about formation spacing, defensive recovery speed, and tactical adjustments in the final third of the match.
+
+---
+
+# Class Share-Out: Comparing Questions
+
+- **Discussion:**
+  - Let's hear what tracking, scouting, and strategy questions your groups formulated.
+  - How do these questions change the kind of data we need to pull?
+
+- **Key Takeaway:**
+  - A single coaching complaint spawns dozens of distinct analytical paths. Framing forces you to choose the *right* path before wasting hours on dead-end data exploration.
+
+---
+
+# Avoiding the "Fishing Expedition" Trap
+
+- **What is Data Fishing?**
+  - Running endless, unguided queries across massive datasets until you find a statistically significant pattern purely by random chance (`\(p &lt; 0.05\)`).
+
+- **The Dangers:**
+  - **Spurious Correlations:** Finding relationships that look meaningful but are entirely coincidental.
+  - **Overfitting:** Building models that explain past random noise rather than future real-world performance.
+
+- **The Defense:** 
+  - Ground your analysis in domain knowledge and framed hypotheses *before* looking at the numbers.
+
+---
+
+# From Question to Data: The Next Steps
+
+- **Once the Question is Framed:**
+  - 1. Identify the exact data sources required (e.g., GPS tracking logs, event streams, optical tracking).
+  - 2. Define your unit of analysis (e.g., per player, per match, per 5-minute interval).
+  - 3. Establish your baseline expectations before running models.
+
+---
+
+# Summary &amp; Looking Ahead
+
+- **Key Takeaway:** Great analytics doesn't start with data; it starts with a well-framed, testable question grounded in domain knowledge.
+
+- **Next Class (Week 2, Class 2):** **Project Kickoff!** We introduce group project expectations. You will begin brainstorming your initial research questions and identifying potential datasets for your semester assignments.
+
+- **For Next Time:** Come to class with two potential sports performance topics you might want to investigate for your group project.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9",
+  "seal": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

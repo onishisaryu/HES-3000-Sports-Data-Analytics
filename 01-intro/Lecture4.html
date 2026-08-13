@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 4</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Saryu Onishi" />
+    <script src="Lecture4_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="Lecture4_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="Lecture4_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="Lecture4_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="ou-colors.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Lecture 4
+]
+.subtitle[
+## Project Kickoff: Framing Questions &amp; Finding Data
+]
+.author[
+### Saryu Onishi
+]
+.date[
+### HES 3000-002, Sport Performance Analytics
+]
+
+---
+
+
+class: title-slide    
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+# Lecture 4
+
+## Project Kickoff: Framing Questions &amp; Finding Data
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Week 2, Class 2 Overview
+
+- **Where We Are:**
+  - Last class, we learned how to translate vague coaching intuition into precise, testable questions across our three domains.
+  
+- **Today's Focus:**
+  - **Project Kickoff!** We introduce group project expectations and begin the hands-on process of scoping your semester research.
+
+- **The Golden Rule for Today:**
+  - Keep it manageable. You do not need complex machine learning or advanced predictive models right now. You need a **clear question and clean data**.
+
+---
+
+# What is the Semester Group Project?
+
+- **The Objective:**
+  - Apply the data analysis skills you learn in this course to a real-world sports performance, scouting, or strategy problem.
+  
+- **Core Deliverables:**
+  - **1. Research Question:** A well-framed, testable hypothesis.
+  - **2. Data Acquisition:** Sourcing, cleaning, and structuring a real dataset.
+  - **3. Analysis &amp; Visualization:** Using R, descriptive statistics, and honest charts to explore relationships.
+  - **4. Synthesis &amp; Recommendation:** Translating your findings into actionable insights for a coach or decision-maker.
+
+---
+
+# How Deep Should You Go? (Managing Scope)
+
+- **What We Expect Right Now:**
+  - **Simple, clear questions:** Do not try to solve "how to win a championship." Try to answer something focused, like: *"How does starting a game on 2 days of rest vs. 5 days of rest impact a player's high-speed distance output?"*
+  - **Basic descriptive metrics:** Means, spreads, distributions, and simple visualizations. 
+  - **Transparency over complexity:** Clean, reproducible code and honest evaluation of what your data can (and cannot) show.
+
+- **What We Do NOT Expect:**
+  - Complex black-box machine learning algorithms.
+  - Terabytes of proprietary optical tracking data that you don't know how to parse.
+
+---
+
+# Guarding Against the "Fishing Expedition"
+
+- **What to Avoid:**
+  - Downloading a massive spreadsheet, loading it into R, and running every possible correlation or regression hoping something looks cool.
+
+- **Why It Fails:**
+  - It leads to uninterpretable results, spurious correlations, and a massive headache when writing up your findings.
+
+- **The Safe Path:**
+  - **Question First `\(\rightarrow\)` Data Second `\(\rightarrow\)` Analysis Third.** Know what you are looking for *before* you start coding.
+
+---
+
+# Brainstorming Session: Where to Look for Data
+
+- **Public Sports Data Repositories:**
+  - **Kaggle:** Excellent for pre-cleaned datasets covering soccer, basketball, football, and baseball performance.
+  - **GitHub Open Repositories:** Sport-specific community data packages.
+  - **Official League Stats / Box Scores:** Basic public APIs or CSV exports for macro-level questions.
+
+- **Your Own Domain Expertise:**
+  - Think about sports you actively play, coach, or follow closely. Domain intuition makes framing a good question much easier!
+
+---
+
+# Choosing Your Domain: Tracking, Scouting, or Strategy?
+
+- **1. Tracking Focus:**
+  - *Example Idea:* Examining how physical workload metrics shift across home vs. away games.
+- **2. Scouting Focus:**
+  - *Example Idea:* Comparing traditional scoring stats against efficiency metrics for collegiate draft prospects.
+- **3. Strategy Focus:**
+  - *Example Idea:* Analyzing situational success rates based on play pacing or tactical formations.
+
+---
+
+# In-Class Workshop: Group Brainstorming
+
+- **Form Your Project Groups (10 mins):**
+  - Sit with your team and introduce yourselves.
+  
+- **Your Tasks for Today:**
+  - **1. Brainstorm 2-3 potential topics** of interest (pick a sport and a performance angle).
+  - **2. Draft a preliminary research question** using the framework from last class.
+  - **3. Identify a potential data source** you can access by Week 3.
+
+---
+
+# Group Share-Out &amp; Instructor Feedback
+
+- **Let's Hear Your Ideas:**
+  - Share your draft questions with the room.
+  - We will test them against our criteria: *Is it specific? Is it measurable? Is it actionable?*
+
+- **Instructor Check:**
+  - Are you biting off more than you can chew? Let's scale it down to a manageable scope if needed.
+
+---
+
+# Summary &amp; Looking Ahead
+
+- **Key Takeaway:** Start small, focus on clean data, and let your framed question drive the analysis.
+
+- **Next Week (Week 3):** We shift to **Data Collection, Quality &amp; Ethics**. Class 1 is asynchronous (getting your data in hand), and Class 2 covers athlete data privacy and the ethics of tracking physical fatigue.
+
+- **For Next Time:** Complete the asynchronous reading/module and ensure your group has identified a concrete dataset to work with.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9",
+  "seal": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 6</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Saryu Onishi" />
+    <script src="Lecture6_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="Lecture6_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="Lecture6_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="Lecture6_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="ou-colors.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Lecture 6
+]
+.subtitle[
+## The Scope of Analytics: Descriptive, Diagnostic, and Predictive
+]
+.author[
+### Saryu Onishi
+]
+.date[
+### HES 3000-002, Sport Performance Analytics
+]
+
+---
+
+
+class: title-slide    
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+# Lecture 6
+
+## The Scope of Analytics: Descriptive, Diagnostic, and Predictive
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Week 4, Class 1 Overview
+
+- **Where We Are:**
+  - After discussing data ethics and athlete privacy last week, we now turn our technical focus back toward practical analysis.
+  
+- **Today's Focus:**
+  - Defining the three primary analytical scopes in sports: **Descriptive** (what happened), **Diagnostic** (why it happened), and **Predictive** (what will happen).
+
+- **The Big Goal:**
+  - Understanding the analytical ladder so you can correctly frame your group project questions and choose the right statistical tools.
+
+---
+
+# The Analytics Value &amp; Complexity Ladder
+
+- **Moving Up the Ladder:**
+  - As you move from descriptive questions to predictive and prescriptive models, both complexity and potential value increase—along with the risk of error.
+
+- **The Four Stages of Sports Analytics:**
+  - 1. **Descriptive:** What happened? (Box scores, season totals)
+  - 2. **Diagnostic:** Why did it happen? (Uncovering root causes, correlations)
+  - 3. **Predictive:** What is likely to happen? (Forecasting performance, injury risk)
+  - 4. **Prescriptive:** What should we do about it? (Optimal tactical or roster decisions)
+
+---
+
+# Stage 1: Descriptive Analytics (What Happened?)
+
+- **Definition:**
+  - Summarizing historical data to understand baseline performance, trends, and aggregate outputs.
+
+- **Sports Examples:**
+  - A team's final points-per-game average over a 16-game season.
+  - Total distance covered by a midfielder across 90 minutes of play.
+  - League-wide shooting percentages by zone.
+
+- **The Purpose:**
+  - Establishes a baseline of truth. Before you can explain *why* something happened, you must accurately describe *what* occurred.
+
+---
+
+# Limitations of Descriptive Analytics
+
+- **The Rearview Mirror Problem:**
+  - Descriptive analytics only tells you where you have been, never where you are going.
+  - A team can have great descriptive stats (e.g., high possession percentage) while still losing matches due to poor conversion efficiency.
+
+- **The Danger of Averages:**
+  - Relying solely on descriptive means can hide massive game-to-game variance and individual player inconsistencies.
+
+---
+
+# Stage 2: Diagnostic Analytics (Why Did It Happen?)
+
+- **Definition:**
+  - Examining data deeper to uncover root causes, patterns, and contextual drivers behind descriptive outcomes.
+
+- **Sports Examples:**
+  - *Descriptive:* Our team conceded 30% more goals in the final 15 minutes of matches.
+  - *Diagnostic:* High-speed running distance dropped by 22% in the second half for players logging `\(&gt;70\)` minutes, correlating with defensive structural breakdowns.
+
+- **The Purpose:**
+  - Connects physical workloads, tactical setups, and environmental factors to performance outputs.
+
+---
+
+# Diagnostic Analytics: Uncovering the Root Cause
+
+- **Moving Beyond Intuition:**
+  - Coaches often guess why a slump happened ("the players lacked focus").
+  - Diagnostic analytics uses data segmentation, comparison groups, and association metrics to find the actual driver.
+
+- **Common Diagnostic Questions:**
+  - *Did our shooting percentage drop because of better defensive pressure, or poor shot selection?*
+  - *Is this injury spike caused by training load spikes or insufficient sleep duration?*
+
+---
+
+# Stage 3: Predictive Analytics (What Will Happen?)
+
+- **Definition:**
+  - Using historical descriptive and diagnostic data, combined with statistical models, to forecast future events or performance trajectories.
+
+- **Sports Examples:**
+  - Projecting a rookie's scoring output in their second professional season.
+  - Estimating the probability that a player will suffer a soft-tissue injury based on their 3-week cumulative acute-to-chronic workload ratio.
+  - Predicting win probabilities in real-time during a live match.
+
+---
+
+# Predictive Analytics: The Reality Check
+
+- **Probability vs. Certainty:**
+  - Predictive models do not tell the future; they calculate **probabilities** based on historical patterns.
+  - Sports are inherently stochastic (random/chaotic)—unexpected injuries, weather changes, and referee decisions can break even the best models.
+
+- **The Overfitting Trap:**
+  - Building a model that predicts past data with 99% accuracy, only for it to completely fail when applied to new games.
+
+---
+
+# Which Scope is "Best"? (Spoiler: Neither)
+
+- **The Common Misconception:**
+  - Many analysts think predictive modeling is "superior" because it sounds advanced, while descriptive statistics are just "beginner stuff."
+
+- **The Real-World Reality:**
+  - **Neither is better; they serve entirely different purposes.** 
+  - If you join a professional sports team tomorrow, the absolute **first thing** you will do is descriptive work. 
+  - Not because it's the easiest, but because it is the **foundational step**. 
+
+---
+
+# Trust and the Descriptive Foundation
+
+- **Building Credibility with Coaches and Management:**
+  - Before a coach or General Manager trusts your complex machine learning model, they need to know your basic numbers match reality.
+  - If your descriptive baseline is flawed, your predictive model is just an expensive guessing machine.
+
+- **The Career Impact:**
+  - How cleanly, accurately, and clearly you execute descriptive reporting often dictates **how much trust leadership places in you** to handle deeper, more sensitive diagnostic and predictive work.
+
+---
+
+# Case Study: Building an Analytical Pipeline
+
+- **Scenario: Analyzing Team Fatigue**
+  - **Descriptive Step:** Calculate total high-speed running meters per match for all players over a season.
+  - **Diagnostic Step:** Cross-reference those distance totals with win/loss outcomes and goal differentials in the final quarter of games.
+  - **Predictive Step:** Build a simple model that flags when an upcoming starting lineup is at high risk of performance drop-off based on recent fixture congestion.
+
+---
+
+# Interactive Exercise: Categorizing the Question
+
+.pull-left[
+### The Scenario
+- Your coaching staff brings you three questions ahead of the weekend fixture:
+  1. *"How many total yards did our receivers gain last week?"*
+  2. *"Why did our passing success rate drop on third downs during away games?"*
+  3. *"What is the probability our starting quarterback gets sacked given the opponent's blitz rate?"*
+]
+
+.pull-right[
+### Your Task (Group Discussion - 5 mins)
+- Categorize each question into its correct analytical scope: **Descriptive, Diagnostic, or Predictive**.
+]
+
+.center[
+.hi[Pair &amp; Share:] *How do these three questions require different data inputs?*
+]
+
+---
+
+# Group Share-Out: Scoping Your Project Questions
+
+- **Discussion:**
+  - How do these three tiers apply to your group project topics?
+  - Are you currently trying to answer a descriptive question, a diagnostic question, or a predictive one?
+
+- **Instructor Guidance:**
+  - For this semester project, focusing heavily on **Descriptive and Diagnostic** frameworks will keep your scope realistic and robust.
+
+---
+
+# Summary &amp; Looking Ahead
+
+- **Key Takeaway:** Analytics is a progression. You must accurately describe data and diagnose its causes before attempting to predict the future—and mastering the basics is how you earn trust in an organization.
+
+- **Next Class (Week 4, Class 2):** We dive into **Measures of Center, Spread, and Distributions**, connecting statistical theory directly to your project datasets with an R tie-in.
+
+- **For Next Time:** Review your group project data and think about which descriptive metrics (mean, median, standard deviation) will best summarize your key variables.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9",
+  "seal": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+---
+title: "Lecture 5"
+subtitle: "Athlete Data Privacy, Consent, and the Ethics of Tracking"
+author: Saryu Onishi
+date: HES 3000-002, Sport Performance Analytics
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: ['default', 'metropolis', 'metropolis-fonts', 'ou-colors.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+
+---
+
+class: title-slide    
+
+<br><br><br>
+
+# Lecture 5
+
+## Athlete Data Privacy, Consent, and the Ethics of Tracking
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Week 3, Class 2 Overview
+
+- **Where We Are:**
+  - Following our asynchronous data-gathering session, your datasets should now be secured and organized in your project folders.
+  
+- **Today's Focus:**
+  - Shifting entirely from code and spreadsheets to the **human side of data**: Privacy, consent, power dynamics, and the ethics of monitoring human bodies.
+
+- **The Big Question:**
+  - Just because we *can* track every heartbeat, step, and micro-movement, does that mean we *should*? And who actually owns an athlete's physiological data?
+
+---
+
+# Asynchronous Work Check-In: The Data Hunt
+
+- **How Did It Go?**
+  - Opening the floor to groups: What datasets did you secure? What file formats are you working with?
+  
+- **Common Roadblocks Addressed:**
+  - *Format issues:* Are your CSVs parsing correctly in R or Excel?
+  - *Scope check:* Is your dataset large enough to run meaningful summary statistics?
+  - *Variable identification:* Do you have a healthy mix of numeric and categorical variables?
+
+---
+
+# The Asynchronous Debrief & Troubleshooting
+
+- **Live Troubleshooting (10 mins):**
+  - Let's look at 1 or 2 group datasets on screen.
+  - Where are the messy columns? Where are the missing values?
+  
+- **Action Item Reminder:**
+  - Every group must have their raw `.csv` file saved cleanly inside a designated `data/` folder before we begin our descriptive analytics labs next week.
+
+---
+
+# The Explosion of Wearables & Internal Tracking
+
+- **What We Track Today:**
+  - **External Load:** Catapult GPS, accelerometers, high-speed running meters, mechanical impacts.
+  - **Internal Load:** Heart rate variability (HRV), resting heart rate, sleep architecture, GPS-derived fatigue indexes.
+  - **Subjective Metrics:** Daily wellness scores, perceived exertion (RPE), psychological stress logs.
+
+- **The Paradox:**
+  - These tools protect players from soft-tissue injuries and optimize peak performance... 
+  - But they also strip away physical privacy entirely.
+
+---
+
+# The Spectrum of Monitoring: From Pitch to Pillow
+
+- **1. In-Session Tracking (High Acceptance):**
+  - GPS vests and heart rate straps worn during official training and matches. Broadly accepted as standard athletic equipment.
+
+- **2. Daily Lifestyle Tracking (Moderate Friction):**
+  - Morning weigh-ins, hydration testing, and daily wellness/RPE questionnaires completed upon arrival at the facility.
+
+- **3. 24/7 Biometric Monitoring (High Contention):**
+  - Oura rings, WHOOP straps, or smart mattresses tracking sleep stages, resting heart rate, and recovery scores around the clock, even at home.
+
+---
+
+# Case Study: The Always-On Athlete
+
+- **The Scenario:**
+  - A professional sports franchise requires all players to wear biometric rings 24/7 to track sleep, recovery, and resting heart rate.
+  - A starting player has a sudden spike in resting heart rate and poor sleep scores over three consecutive nights.
+  - **The Dilemma:** The team is heading into a crucial playoff game. The coaching staff wants to bench him for "fatigue risk," but the player argues he feels fine and worries about his contract value dropping if he sits.
+
+- **Discussion:** 
+  - *Who wins this argument? Where does team performance end and personal bodily autonomy begin?*
+
+---
+
+# The Power Dynamics of Data
+
+- **The Employer-Employee Trap:**
+  - In traditional corporate workplaces, constant biometric monitoring would face massive legal, regulatory, and union pushback.
+  - In elite sports, compliance is often tied directly to employment contracts, playing time, and financial security.
+
+- **The "Opt-Out" Illusion:**
+  - Can an athlete truly say "no" to wearing a tracking vest or a sleep monitor when their spot on the roster depends on cooperating with the performance staff?
+  - The illusion of choice in high-performance environments.
+
+---
+
+# Coercion vs. Informed Consent
+
+- **Defining True Consent:**
+  - Informed consent requires that a person can say "no" without facing negative professional consequences.
+  - In professional sports, declining to share biometric data can signal to management that a player is "difficult," uncommitted, or hiding an injury.
+
+- **The Analyst's Dilemma:**
+  - As performance analysts, we often sit right in the middle—processing data handed to us by management without always knowing how freely that data was given.
+
+---
+
+# Ownership: Who Owns the Sweat?
+
+- **The Legal Gray Area:**
+  - **The Team Perspective:** "We pay your salary, we own the equipment, we own the infrastructure—therefore, the data generated on our time belongs to the organization."
+  - **The Athlete Perspective:** "This is my biological data, my sleep patterns, my long-term health history, and it could impact my career earnings long after I leave this team."
+
+- **The Intellectual Property Argument:**
+  - Do athletes have a right to license or monetize their own physical output data? 
+
+---
+
+# Precedents: What Do the Leagues Say?
+
+- **Collective Bargaining Agreements (CBAs):**
+  - Leagues like the NBA, NFL, and MLS have increasingly stepped in through player unions to regulate data usage.
+  - **Common Protections:**
+    - Tracking data *cannot* be used directly in salary arbitrations or contract negotiations.
+    - Wearables are often restricted to team facilities (off-hours tracking is optional).
+
+- **The International Landscape:**
+  - European soccer clubs face strict GDPR regulations regarding the collection and storage of players' biometric and health data.
+
+---
+
+# Ethical Frameworks for Performance Analysts
+
+- **1. Transparency:**
+  - Athletes must know *what* is being collected, *how* it is stored, and *who* has access to it. No hidden metrics or secret surveillance pipelines.
+
+- **2. Purpose Limitation:**
+  - Data collected for **health, recovery, and injury mitigation** should never be weaponized for **contract negotiations, public shaming, or lineup politics**.
+
+- **3. Data Security:**
+  - Biometric and medical data are highly sensitive. A leaked spreadsheet of player recovery metrics or injury risk profiles is a massive security breach and privacy violation.
+
+---
+
+# The Danger of Misinterpreting Biometrics
+
+- **False Positives in Recovery:**
+  - Biometric models (like sleep scores and HRV) are imperfect and prone to noise. 
+  - An algorithm might flag a player as "high fatigue risk," but the athlete might just be stressed about family matters or a newborn baby.
+
+- **The Risk of Over-Intervention:**
+  - Pulling a star player based on a flawed algorithm can disrupt team chemistry, frustrate the player, and cost games based on a statistical ghost.
+  - **Rule of Thumb:** Data informs the conversation; it should rarely make the final decision in isolation.
+
+---
+
+# Interactive Exercise: Drafting an Analytics Privacy Policy
+
+.pull-left[
+### The Challenge
+- Imagine your group is consulting for a newly formed professional rugby team.
+- The ownership wants complete, unfiltered 24/7 access to player biometrics to prevent injuries.
+- The players' union is threatening to strike over privacy concerns.
+]
+
+.pull-right[
+### Your Task (Group Discussion - 10 mins)
+- Draft a **3-point compromise policy** that balances the team's need for injury mitigation with the athletes' right to privacy.
+]
+
+.center[
+.hi[Pair & Share:] *What safeguards did your group put in place to protect the players?*
+]
+
+---
+
+# Group Share-Out & Policy Critique
+
+- **Discussion:**
+  - Let's hear some of the safeguards your groups implemented.
+  - How did you handle off-hours tracking? How did you protect data from being used in contract talks?
+
+- **Instructor Synthesis:**
+  - The best sports analytics organizations build trust with their athletes. If players believe data is being used *for* them rather than *against* them, compliance and data quality skyrocket.
+
+---
+
+# Summary & Looking Ahead
+
+- **Key Takeaway:** As sports analysts, our ethical responsibilities to the human beings behind the data are just as important as our technical skills in R.
+
+- **Next Week (Week 4):** We dive into **Descriptive & Diagnostic Frameworks**—moving from raw data hygiene to understanding what our project variables actually look like statistically.
+
+- **For Next Time:** Ensure your group dataset is cleaned, loaded into R, and ready for our Week 4 descriptive analytics lab.

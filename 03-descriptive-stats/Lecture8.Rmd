@@ -1,0 +1,251 @@
+---
+title: "Lecture 8"
+subtitle: "Principles of Honest Charts & Visualizing Quantities & Distributions"
+author: Saryu Onishi
+date: HES 3000-002, Sport Performance Analytics
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: ['default', 'metropolis', 'metropolis-fonts', 'ou-colors.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+
+---
+
+class: title-slide    
+
+<br><br><br>
+
+# Lecture 8
+
+## Principles of Honest Charts & Visualizing Quantities & Distributions
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Week 5, Class 1 Overview
+
+- **Where We Are:**
+  - Last week, we mastered descriptive statistics (center, spread, distributions) and ran preliminary stats on your group project data.
+  
+- **Today's Focus:**
+  - Transitioning from numbers to pictures: The principles of **honest charts** and how to visualize **Quantities and Distributions** effectively.
+
+- **The Big Goal:**
+  - Learn how to build clear, truthful visualizations in R that communicate insights to coaches and staff without misleading the audience.
+
+---
+
+# Why Data Visualization Matters in Sports
+
+- **The Human Brain and Visual Processing:**
+  - Coaches and General Managers rarely have time to parse dense rows of numbers in an Excel sheet. 
+  - A clean, well-designed chart communicates complex findings in seconds.
+
+- **The Analyst's Responsibility:**
+  - Visuals are persuasive. If your chart is confusing or misleading, you will misinform key decision-makers and lose organizational trust.
+
+---
+
+# The Power (and Danger) of Visuals
+
+- **The Double-Edged Sword:**
+  - Charts can illuminate hidden performance trends... or they can completely distort reality to fit a pre-existing narrative.
+
+- **Bad Visualization in Media:**
+  - Sports media is notorious for sensationalized graphics: truncated axes, missing baselines, and misleading 3D bar charts that exaggerate minor performance differences.
+
+---
+
+# Core Principles of Honest Charts
+
+- **1. Show the Data Clearly:**
+  - Never let design fluff (unnecessary 3D effects, busy backgrounds, excessive gridlines) obscure the actual data points.
+
+- **2. Do Not Misrepresent Magnitude:**
+  - Visual elements must scale directly and proportionally to the numerical values they represent.
+
+- **3. Provide Complete Context:**
+  - Always include clear labels, units of measurement, and appropriate baselines.
+
+---
+
+# Principle 1: Scale Integrity (The Axis Trap)
+
+- **The Truncated Y-Axis:**
+  - Starting a bar chart at a non-zero baseline artificially exaggerates small differences between players or teams.
+  
+- **Sports Example:**
+  - If Team A averages 102 points per game and Team B averages 105, starting the y-axis at 100 makes Team B look twice as good as Team A, when the actual difference is negligible.
+
+- **Rule of Thumb:**
+  - For bar charts representing counts or totals, the y-axis **must** start at zero.
+
+---
+
+# Principle 2: Proportional Area & Visual Weight
+
+- **The 2D vs. 1D Trap:**
+  - When scaling circles or 3D objects, human eyes judge **area or volume**, not just linear radius.
+  - Doubling the radius of a circle quadruples its area, creating a massive visual distortion of value.
+
+- **The Fix:**
+  - Stick to standard 2D Cartesian coordinates (bars, dots, lines) where length and position map cleanly to numerical values.
+
+---
+
+# Principle 3: Context and Comparison
+
+- **Numbers Need Denominators:**
+  - Visualizing raw totals (e.g., total passing yards) often just highlights who played the most minutes.
+  - Honest charts visualize **rates, efficiencies, or per-minute metrics** to provide fair comparisons across athletes.
+
+---
+
+# Visualizing Quantities in Sports
+
+- **What is a Quantity Chart?**
+  - Comparing discrete values across categories (e.g., goals by player, payroll by team, distance by position).
+
+- **Primary Tools:**
+  - **Bar Charts / Column Charts:** The gold standard for comparing quantities.
+  - **Lollipop Charts:** A cleaner, modern alternative to crowded bar charts.
+  - **Cleveland Dot Plots:** Excellent for comparing multiple metrics across categories without visual clutter.
+
+---
+
+# Visualizing Quantities Best Practices
+
+- **Ordering Matters:**
+  - Never leave categorical bars in alphabetical order unless it's a true alphabetical scale. 
+  - **Always sort bars by value** (descending or ascending) so the coach's eye instantly sees who is first and last.
+
+- **Horizontal vs. Vertical:**
+  - Use horizontal bar charts when category labels (player names, team names) are long to prevent unreadable text warping.
+
+---
+
+# Visualizing Distributions in Sports
+
+- **Why Look at Distributions?**
+  - Means and medians hide variance. Visualizing distributions shows you the *full shape* of an athlete's performance range.
+
+- **Primary Tools:**
+  - **Histograms:** Showing frequency bins for continuous data.
+  - **Density Plots:** Smoothed representations of data distributions.
+  - **Boxplots:** Summarizing the median, IQR, and outliers compactly.
+  - **Violin Plots:** Combining density curves with boxplots for deep distributional insights.
+
+---
+
+# Visualizing Distributions: Boxplots in Sports
+
+- **Anatomy of a Boxplot:**
+  - **The Center Line:** Median.
+  - **The Box:** Interquartile Range (middle 50% of performances).
+  - **The Whiskers:** Spread of typical data (up to 1.5 * IQR).
+  - **Points Beyond Whiskers:** Outliers (exceptional breakout games or terrible slumps).
+
+- **Sports Application:**
+  - Comparing the consistency of two players who both average 20 points per game, but have drastically different boxplot spreads.
+
+---
+
+# Case Study: Spotting Skewness Visually
+
+- **The Scenario:**
+  - You analyze player salaries or rare event metrics (like turnovers or fast-break points).
+- **What a Histogram Reveals:**
+  - A heavily right-skewed distribution where 90% of players cluster at the low end, and a few superstars stretch the tail far to the right.
+- **Why It Matters:**
+  - Visualizing the skew tells you immediately that using the mean will mislead management—you *must* use the median and IQR instead.
+
+---
+
+# Introduction to ggplot2 in R
+
+- **The Grammar of Graphics:**
+  - Built on the philosophy that charts are built layer by layer: Data -> Aesthetic Mappings -> Geometric Objects (geoms).
+
+- **Basic Syntax Structure:**
+```{r, eval = FALSE}
+library(ggplot2)
+
+ggplot(data = df, aes(x = variable1, y = variable2)) +
+  geom_point() +
+  theme_minimal()
+```
+
+---
+
+# Code Example: Visualizing Quantities in R
+
+- Creating a Clean Bar Chart:
+```{r, eval = FALSE}
+library(ggplot2)
+library(dplyr)
+
+# Summarize and plot mean metric by position
+df_summary <- df %>%
+  group_by(position) %>%
+  summarize(mean_val = mean(metric_name, na.rm = TRUE))
+
+ggplot(df_summary, aes(x = reorder(position, mean_val), y = mean_val)) +
+  geom_col(fill = "steelblue") +
+  coord_flip() + # Horizontal for readability
+  labs(title = "Mean Performance by Position", x = "Position", y = "Value") +
+  theme_minimal()
+```
+
+---
+
+# Code Example: Visualizing Distributions in R
+
+- Creating a Boxplot by Group:
+```{r, eval = FALSE}
+ggplot(df, aes(x = position, y = metric_name, fill = position)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(title = "Distribution of Performance Metric by Position", 
+       x = "Position", y = "Metric Value") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+---
+
+# In-Class Lab: Building Honest Charts (20 mins)
+
+- Lab Objectives:
+ - Open your group project R script.
+ - Build at least one quantity chart (e.g., bar chart of means by position/player) and one distribution chart (e.g., boxplot or histogram) using ggplot2.
+ - Apply the principles of honest charts: clean labels, zero-baselines where appropriate, and sorted categories.
+
+- Deliverable:
+ - Two functional ggplot code chunks saved in your project repository script.
+
+---
+
+# Lab Share-Out & Peer Critique
+
+- Discussion:
+ - Let's project 1 or 2 group charts on the screen.
+ - Do these charts follow our honesty principles? Are the axes clear? Does the visualization tell an immediate story?
+
+- Instructor Feedback:
+ - Refining your visual communication now will make your final project presentation drastically stronger at the end of the semester.
+
+---
+
+# Summary & Looking Ahead
+
+- Key Takeaway: Honest charts protect your credibility. Use quantity charts to compare categories fairly and distribution charts to reveal the full story behind the averages.
+
+- Next Class (Week 5, Class 2): We cover Visualizing Proportions and Relationships, followed by a hands-on project lab where you apply these visualization techniques directly to your project datasets.
+
+- For Next Time: Ensure your basic quantity and distribution plots are generated and saved in your project repo.

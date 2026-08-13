@@ -1,0 +1,135 @@
+---
+title: "Lecture 2"
+subtitle: "The Three Domains of Sports Analytics"
+author: Saryu Onishi
+date: HES 3000-002, Sport Performance Analytics
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: ['default', 'metropolis', 'metropolis-fonts', 'ou-colors.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+
+---
+
+class: title-slide    
+
+<br><br><br>
+
+# Lecture 2
+
+## The Three Domains: Tracking, Scouting, and Strategy
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Overview of the Three Domains
+
+- **Deconstructing Performance Analytics:**
+  - To build effective data solutions, we must separate operational questions into distinct analytical buckets.
+  
+- **The Core Framework:**
+    1. **Athlete Tracking:** Quantifying physical output, internal/external loads, and movement mechanics.
+    2. **Scouting & Talent Evaluation:** Assessing player potential, performance trajectories, and market valuation objectively.
+    3. **Strategy & Tactical Optimization:** Leveraging situational probabilities and spatial efficiency for in-game decision-making.
+
+- **Objective:** Understand how each domain transforms raw data into competitive advantages and changes real-world sports decisions.
+
+---
+
+# Domain 1: Athlete Tracking (Physical & Spatial)
+
+- **What We Measure:**
+  - **External Load:** Distance covered, high-speed running meters, accelerations, decelerations, and mechanical load (via GPS/accelerometers like Catapult).
+  - **Internal Load:** Heart rate response, session RPE (Rate of Perceived Exertion), and physiological stress markers.
+
+- **How It Changes Decisions:**
+  - Moves training protocols away from "gut-feel" fatigue management to objective load monitoring.
+  - Helps flag soft-tissue injury risk by tracking acute-to-chronic workload spikes.
+
+---
+
+# Interactive Exercise: Managing the Load
+
+.pull-left[
+### Scenario
+- A key starter logs a massive high-speed running workload in a tough away match. 
+- GPS data shows their acceleration output dropped 15% in the final 15 minutes.
+- The player insists they feel fine and wants to play the full next fixture.
+]
+
+.pull-right[
+### The Decision Point
+- Do you trust the athlete's subjective feedback or the objective tracking data?
+- What are the short-term vs. long-term risks of your choice?
+]
+
+.center[
+.hi[Pair & Share (5 mins):] *How would you communicate this tracking insight to a head coach who is resistant to resting star players?*
+]
+
+---
+
+# Domain 2: Scouting & Talent Evaluation
+
+- **The Shift from Subjective to Objective:**
+  - Traditional scouting relies heavily on subjective visual grades and small sample sizes ("he passes the eye test").
+  - Modern scouting uses contextualized performance metrics, tracking data, and predictive modeling to project future value.
+
+- **Key Components:**
+    - **Player Profiling:** Finding statistical analogs and skill-set matches across leagues.
+    - **Valuation & Efficiency:** Assessing production relative to cost or draft position.
+    - **Injury History Integration:** Merging medical screening data with tracking metrics to project durability.
+
+---
+
+# Mini-Case Study: Finding Inefficiencies in Player Acquisition
+
+- **The Challenge:**
+  - Small-market organizations cannot compete purely on financial spending to acquire elite talent.
+  - Traditional metrics often overvalue visible box-score stats (e.g., raw scoring) while undervaluing unseen contributions (e.g., defensive gravity, spacing, passing efficiency).
+
+- **The Analytical Solution:**
+  - Building custom rating models that weight context (quality of competition, teammate synergy, tactical role).
+  - Uncovering undervalued players who excel in specific micro-metrics that predict team success.
+
+---
+
+# Domain 3: Strategy & Tactical Optimization
+
+- **In-Game and Pre-Match Decision Making:**
+  - Moving from intuition-based game plans to probabilistic modeling.
+  - Assessing risk vs. reward in high-leverage situations (e.g., fourth-down conversions in football, defensive shifting in baseball, spacing geometry in basketball).
+
+- **How Data Changes Decisions:**
+  - **Pre-Match:** Identifying opponent tendencies, structural vulnerabilities, and optimal tactical matchups.
+  - **In-Game:** Real-time adjustments based on spatial tracking feedback and macro-tendencies.
+
+---
+
+# How Data Changes Sports Decisions: A Framework
+
+- **1. Descriptive (What happened?)**
+  - Standard reporting of past matches and box scores.
+- **2. Diagnostic (Why did it happen?)**
+  - Uncovering the underlying mechanics, spatial breakdowns, or physical fatigue states that caused an outcome.
+- **3. Predictive (What is likely to happen?)**
+  - Projecting future performance, injury probability, or tactical success rates.
+- **4. Prescriptive (What should we do about it?)**
+  - Actionable recommendations that directly alter coaching, training, or roster decisions.
+
+---
+
+# Summary & Looking Ahead
+
+- **Key Takeaway:** The three domains (Tracking, Scouting, Strategy) do not operate in silos; they feed into an interconnected ecosystem of performance optimization.
+
+- **Next Class:** Group Project Kickoff and Question Framing—shifting from theory to defining your own testable sports analytics research questions.
+
+- **For Next Time:** Start brainstorming potential datasets and core performance questions for your semester project.

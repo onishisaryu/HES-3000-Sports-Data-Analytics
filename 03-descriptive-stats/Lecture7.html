@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 7</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Saryu Onishi" />
+    <script src="Lecture7_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="Lecture7_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="Lecture7_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="Lecture7_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="ou-colors.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Lecture 7
+]
+.subtitle[
+## Measures of Center, Spread, and Distributions
+]
+.author[
+### Saryu Onishi
+]
+.date[
+### HES 3000-002, Sport Performance Analytics
+]
+
+---
+
+
+class: title-slide    
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+# Lecture 7
+
+## Measures of Center, Spread, and Distributions
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Week 4, Class 2 Overview
+
+- **Where We Are:**
+  - Last class, we mapped the analytical ladder from descriptive baseline reporting up to predictive modeling.
+  
+- **Today's Focus:**
+  - Getting our hands dirty with the core descriptive math: **Measures of Center, Spread, and Distributions**, plus looking at group and positional differences.
+
+- **Project Tie-In:**
+  - Today includes a hands-on lab where you will run preliminary descriptive statistics directly on your group project data in R.
+
+---
+
+# Why Descriptive Stats Matter in Sports
+
+- **The Myth of the "Average" Player:**
+  - In elite sports, looking only at the mean can hide incredible variation. Two players can have the exact same average points-per-game, but completely different performance profiles.
+
+- **The Analyst's Toolkit:**
+  - Before building complex models, we must understand the shape, center, and spread of our performance metrics.
+
+- **The Goal:**
+  - Build intuition for what your data looks like before writing code to model it.
+
+---
+
+# Measures of Center: The Mean
+
+- **The Arithmetic Mean (Average):**
+  - `\(\bar{x} = \frac{\sum x}{n}\)`
+  - *Pros:* Accounts for every single value in the dataset; mathematically convenient and universally understood by coaches and staff.
+  - *Cons:* Highly sensitive to outliers (e.g., one massive 50-point game or an injury-shortened blowout distorts the season average).
+
+- **Sports Application:**
+  - Calculating a player's average yards per carry or points per match over a season.
+
+---
+
+# Measures of Center: The Median
+
+- **The Median (Middle Value):**
+  - The exact midpoint when data is ordered from least to greatest. If `\(n\)` is even, it's the average of the two middle numbers.
+  - *Pros:* Robust against extreme outliers and skewed data. 
+  - *Cons:* Ignores the magnitude of extreme performances.
+
+- **Sports Application:**
+  - Contract salaries, penalty minutes, or rare event tracking where a few extreme values heavily skew the mean.
+
+---
+
+# Measures of Center: Mean vs. Median in Sports
+
+.pull-left[
+### Scenario A: Balanced Output
+- **Player Scores:** 18, 20, 22, 21, 19
+- **Mean:** 20.0 points
+- **Median:** 20.0 points
+- *Interpretation:* Consistent output; mean and median tell the same story.
+]
+
+.pull-right[
+### Scenario B: The Outlier Game
+- **Player Scores:** 10, 12, 11, 13, 45
+- **Mean:** 18.2 points
+- **Median:** 12.0 points
+- *Interpretation:* The 45-point game artificially inflates the mean. Median is a truer representation of typical game output.
+]
+
+---
+
+# Measures of Center: Visualized
+
+---
+
+# Measures of Spread: Variance &amp; Standard Deviation
+
+- **Quantifying Consistency:**
+  - **Standard Deviation (`\(SD\)`):** Measures how far values typically deviate from the mean.
+  - In sports, a low `\(SD\)` means a reliable, consistent performer; a high `\(SD\)` indicates a "boom-or-bust" player.
+
+- **Formula Reminder:**
+  - `\(SD = \sqrt{\frac{\sum (x - \bar{x})^2}{n - 1}}\)`
+
+---
+
+# Measures of Spread: Range &amp; IQR
+
+- **The Range:**
+  - Difference between the maximum and minimum values (`\(\text{Max} - \text{Min}\)`). Highly sensitive to outliers.
+
+- **The Interquartile Range (IQR):**
+  - The spread of the middle 50% of the data (`\(\text{Q3} - \text{Q1}\)`).
+  - Excellent for evaluating performance consistency while discarding extreme anomaly games (injuries, blowouts).
+
+- **Sports Application:**
+  - Evaluating whether a player's scoring output is stable night-to-night or wildly erratic.
+
+---
+
+# Understanding Distributions in Sports Data
+
+- **The Normal Distribution (Bell Curve):**
+  - Many biological and physical traits roughly approximate a normal distribution (e.g., heights, weights, basic game speeds).
+  - Defined entirely by its mean and standard deviation (symmetric).
+
+- **The Reality of Sports:**
+  - Most performance metrics are **not** perfectly normal! 
+
+---
+
+# Skewness in Sports Metrics
+
+- **Right-Skewed (Positive Skew):**
+  - Most players have low counts, but a few superstars skew the tail high.
+  - *Examples:* Goals scored per match, career home runs, yellow cards.
+
+- **Left-Skewed (Negative Skew):**
+  - Values clustered near the maximum ceiling, with a few poor performances trailing off.
+  - *Examples:* Passing completion percentages for elite quarterbacks, free-throw percentages.
+
+---
+
+# Group &amp; Positional Differences
+
+- **Why Segment Your Data?**
+  - Looking at a whole team or league average often masks the truth because different positions have entirely different physical and tactical requirements.
+
+- **Sports Example:**
+  - Lumping center-backs and wingers together in soccer makes total high-speed distance look "average." 
+  - Segmenting by position reveals that wingers log massive high-speed workloads, while central defenders rely more on mechanical impacts and aerial duels.
+
+---
+
+# Visualizing Distributions and Groups
+
+- **Beyond Summary Tables:**
+  - Numbers like means and standard deviations tell part of the story, but visual shapes reveal the full picture.
+  - Histograms, density plots, and boxplots are essential tools for spotting positional differences and skewness.
+
+
+---
+
+# Running Descriptive Stats
+
+- **Using `dplyr` for Quick Summaries:**
+
+``` r
+library(dplyr)
+
+# Calculate mean and standard deviation by position
+df %&gt;%
+  group_by(position) %&gt;%
+  summarize(
+    mean_metric = mean(metric_name, na.rm = TRUE),
+    sd_metric   = sd(metric_name, na.rm = TRUE),
+    median_val  = median(metric_name, na.rm = TRUE),
+    iqr_val     = IQR(metric_name, na.rm = TRUE)
+  )
+```
+
+---
+
+# Project Lab: Preliminary Descriptive Stats
+
+- Lab Objective (20 mins):
+ - Open your group project dataset in RStudio.
+ - Calculate the center (mean/median) and spread (SD/IQR) for your primary performance variable.
+ - Check for missing values or extreme outliers that might skew your results.
+
+- Deliverable:
+ - A summary table in your R script showing descriptive metrics broken down by a categorical group or position variable.
+ 
+---
+ 
+# Lab Guidance: Handling Messy Data
+
+- Watch Out For:
+ - `NA` values breaking your calculations (always use `na.rm = TRUE` in R!).
+ - Data types stored as characters instead of numerics.
+ 
+- Sanity Check:
+ - Do your summary statistics make logical sense for the sport you are analyzing? (e.g., a soccer match running distance of 10,000 meters makes sense; 10,000 kilometers does not).
+ 
+---
+ 
+# Lab Share-Out &amp; Troubleshooting
+
+- Discussion:
+ - What did your preliminary stats reveal? Did you find any unexpected outliers or skewness in your data?
+ - How did breaking the data down by position or group change the story?
+ 
+- Instructor Feedback:
+ - Identifying data anomalies now saves you from massive modeling errors later in the semester.
+ 
+---
+
+# Common Pitfalls in Descriptive Analysis
+
+- Pitfall 1: Ignoring Sample Size (`\(n\)`)
+ - Calculating a great average based on a sample size of 3 games tells you nothing reliable.
+ 
+- Pitfall 2: Treating Skewed Data as Normal
+ - Using mean and standard deviation on heavily skewed metrics (like salary or rare events) creates misleading interpretations.
+ 
+- Pitfall 3: Failing to Contextualize
+ - Numbers without sport context are just abstract math.
+
+---
+
+#Summary &amp; Looking Ahead
+
+- Key Takeaway: Descriptive statistics (center, spread, and distributions) give you the foundational truth of your data before you ever run a regression model.
+
+- Next Week (Week 5): We move into Data Visualization Taxonomy—learning the principles of honest charts and how to visualize quantities and distributions effectively.
+
+- For Next Time: Ensure your preliminary descriptive stats script is saved in your project repo and ready for next week's visualization labs.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9",
+  "seal": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 9</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Saryu Onishi" />
+    <script src="Lecture9_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="Lecture9_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="Lecture9_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="Lecture9_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="ou-colors.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide    
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+# Lecture 9
+
+## Review &amp; Synthesis: From Questions to Insights
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Week 5, Class 2 Overview
+
+- **The "Big Picture" Review:**
+  - We’ve covered a lot of ground in 4 weeks. Today is about connecting the dots.
+  
+- **Today's Focus:**
+  - Reviewing the analytics workflow: Problem Framing -&gt; Data Hygiene -&gt; Descriptive Foundations -&gt; Honest Visualization.
+
+- **The Goal:**
+  - Ensure you have a cohesive narrative for your group project. If you can't explain your project in one sentence, we need to fix that today.
+
+---
+
+# The Workflow: The "Analytic Spine"
+
+- **Every great sports project follows this spine:**
+  1. **The Question:** Is it specific, measurable, actionable, and falsifiable?
+  2. **The Data:** Is it clean, structured, and representative?
+  3. **The Description:** Do we know the centers, spreads, and distributions?
+  4. **The Visualization:** Does the chart tell the truth or hide it?
+
+- **Reflect:** Look at your project repo. Where are you on this spine? Are you stuck on data cleaning, or are you ready to synthesize?
+
+---
+
+# Review: The "Fishing" Trap
+
+- **The Lesson:** We never jump to models. 
+- **The Check:** Did you frame your question *before* looking at the dataset, or did you browse the columns and hope for a pattern?
+- **Why it matters:** If you start with a question, you have a goal. If you start with data, you have a headache.
+
+---
+
+# Review: Descriptive Foundations
+
+- **Why "Descriptive" isn't a dirty word:**
+  - It is the **foundation of trust**.
+  - A mean without a standard deviation is a lie.
+  - A median without an IQR is a shortcut.
+  - *Self-Check:* Does your project use both measures of center AND spread?
+
+---
+
+# Review: The Ethics of Tracking
+
+- **The Human Element:**
+  - Never forget: your data points are people.
+  - When presenting your project findings, ask: "If a player saw this chart, would they feel supported, or would they feel spied on?"
+
+---
+
+# Synthesis Workshop: The "Elevator Pitch"
+
+- **The Challenge:**
+  - Can your group explain their project in 60 seconds to a Head Coach?
+  - 1. **The Problem:** What specific intuition were we investigating?
+  - 2. **The Finding:** What did the descriptive statistics show?
+  - 3. **The Action:** What is the one thing a coach should do differently based on this?
+
+- **Why this is hard:** It forces you to abandon the "everything" approach and focus on the "one thing" that matters.
+
+---
+
+# In-Class Lab: The "Red Flag" Audit (20 mins)
+
+- **Audit your group's current progress:**
+  - [ ] **Problem:** Is the question still narrow and testable?
+  - [ ] **Data:** Are there still missing values or "junk" rows?
+  - [ ] **Charts:** Do your charts follow the "Honest Charts" principles (zero-baseline, clean labels)?
+  - [ ] **Synthesis:** Can you answer the "So What?" question?
+
+---
+
+# Troubleshooting the Review: Common Pain Points
+
+- **1. "My data is messy":**
+  - Don't try to clean it all. Clean the 3 columns you need for the question.
+- **2. "My charts look boring":**
+  - Good. Boring charts are often the most honest. Clear labels &gt; fancy colors.
+- **3. "My results are inconclusive":**
+  - That is a result! Describing *why* there is no correlation is just as analytical as finding one.
+
+---
+
+# Peer Feedback Session
+
+- **Groups swap repo links:**
+  - Look at another team's code/charts.
+  - **Question for the group:** "What is the *most* interesting thing this chart tells you?"
+  - If they can't answer immediately, the chart needs a clearer title or annotation.
+
+---
+
+# Summary &amp; The Road to Submission
+
+- **Key Takeaway:** Analytics is a cycle of refinement. You start with a big, messy idea and slowly whittle it down into a sharp, actionable insight.
+
+- **Next Steps:**
+  - Finalize your project descriptive stats and visualizations.
+  - We move into **Inferential Thinking** (Class 10) next week—how to tell if our results are real or just noise.
+
+- **For Next Time:** No new prep. Just ensure your project's "Spine" (Question -&gt; Data -&gt; Descriptive -&gt; Visual) is solid.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

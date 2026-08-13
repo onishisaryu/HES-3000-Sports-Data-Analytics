@@ -1,0 +1,133 @@
+---
+title: "Lecture 9"
+subtitle: "Review & Synthesis: From Questions to Insights"
+author: Saryu Onishi
+date: HES 3000-002, Sport Performance Analytics
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: ['default', 'metropolis', 'metropolis-fonts', 'ou-colors.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+
+---
+
+class: title-slide    
+
+<br><br><br>
+
+# Lecture 9
+
+## Review & Synthesis: From Questions to Insights
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Week 5, Class 2 Overview
+
+- **The "Big Picture" Review:**
+  - We’ve covered a lot of ground in 4 weeks. Today is about connecting the dots.
+  
+- **Today's Focus:**
+  - Reviewing the analytics workflow: Problem Framing -> Data Hygiene -> Descriptive Foundations -> Honest Visualization.
+
+- **The Goal:**
+  - Ensure you have a cohesive narrative for your group project. If you can't explain your project in one sentence, we need to fix that today.
+
+---
+
+# The Workflow: The "Analytic Spine"
+
+- **Every great sports project follows this spine:**
+  1. **The Question:** Is it specific, measurable, actionable, and falsifiable?
+  2. **The Data:** Is it clean, structured, and representative?
+  3. **The Description:** Do we know the centers, spreads, and distributions?
+  4. **The Visualization:** Does the chart tell the truth or hide it?
+
+- **Reflect:** Look at your project repo. Where are you on this spine? Are you stuck on data cleaning, or are you ready to synthesize?
+
+---
+
+# Review: The "Fishing" Trap
+
+- **The Lesson:** We never jump to models. 
+- **The Check:** Did you frame your question *before* looking at the dataset, or did you browse the columns and hope for a pattern?
+- **Why it matters:** If you start with a question, you have a goal. If you start with data, you have a headache.
+
+---
+
+# Review: Descriptive Foundations
+
+- **Why "Descriptive" isn't a dirty word:**
+  - It is the **foundation of trust**.
+  - A mean without a standard deviation is a lie.
+  - A median without an IQR is a shortcut.
+  - *Self-Check:* Does your project use both measures of center AND spread?
+
+---
+
+# Review: The Ethics of Tracking
+
+- **The Human Element:**
+  - Never forget: your data points are people.
+  - When presenting your project findings, ask: "If a player saw this chart, would they feel supported, or would they feel spied on?"
+
+---
+
+# Synthesis Workshop: The "Elevator Pitch"
+
+- **The Challenge:**
+  - Can your group explain their project in 60 seconds to a Head Coach?
+  - 1. **The Problem:** What specific intuition were we investigating?
+  - 2. **The Finding:** What did the descriptive statistics show?
+  - 3. **The Action:** What is the one thing a coach should do differently based on this?
+
+- **Why this is hard:** It forces you to abandon the "everything" approach and focus on the "one thing" that matters.
+
+---
+
+# In-Class Lab: The "Red Flag" Audit (20 mins)
+
+- **Audit your group's current progress:**
+  - [ ] **Problem:** Is the question still narrow and testable?
+  - [ ] **Data:** Are there still missing values or "junk" rows?
+  - [ ] **Charts:** Do your charts follow the "Honest Charts" principles (zero-baseline, clean labels)?
+  - [ ] **Synthesis:** Can you answer the "So What?" question?
+
+---
+
+# Troubleshooting the Review: Common Pain Points
+
+- **1. "My data is messy":**
+  - Don't try to clean it all. Clean the 3 columns you need for the question.
+- **2. "My charts look boring":**
+  - Good. Boring charts are often the most honest. Clear labels > fancy colors.
+- **3. "My results are inconclusive":**
+  - That is a result! Describing *why* there is no correlation is just as analytical as finding one.
+
+---
+
+# Peer Feedback Session
+
+- **Groups swap repo links:**
+  - Look at another team's code/charts.
+  - **Question for the group:** "What is the *most* interesting thing this chart tells you?"
+  - If they can't answer immediately, the chart needs a clearer title or annotation.
+
+---
+
+# Summary & The Road to Submission
+
+- **Key Takeaway:** Analytics is a cycle of refinement. You start with a big, messy idea and slowly whittle it down into a sharp, actionable insight.
+
+- **Next Steps:**
+  - Finalize your project descriptive stats and visualizations.
+  - We move into **Inferential Thinking** (Class 10) next week—how to tell if our results are real or just noise.
+
+- **For Next Time:** No new prep. Just ensure your project's "Spine" (Question -> Data -> Descriptive -> Visual) is solid.
