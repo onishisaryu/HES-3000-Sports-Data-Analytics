@@ -1,5 +1,4 @@
-# VERSION 2: INSTRUCTOR DAY-BY-DAY LECTURE GUIDE
-Updated with Asynchronous Class & Integrated Project Work
+# INSTRUCTOR DAY-BY-DAY LECTURE GUIDE
 
 ---
 
