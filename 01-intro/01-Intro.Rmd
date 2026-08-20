@@ -1,0 +1,389 @@
+---
+title: "First Day of Class"
+subtitle: "What Does It Mean to Do Sport Performance Analytics?"
+author: Saryu Onishi
+date: HES 3000-002, Sport Performance Analytics
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: ['default', 'metropolis', 'metropolis-fonts', 'ou-colors.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+
+---
+
+class: title-slide
+
+<br><br><br>
+
+# Welcome to HES 3000-002
+
+## What Does It Mean to Do Sport Performance Analytics?
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Welcome to Sport Performance Analytics
+
+- Sports generate enormous amounts of data.
+
+- But having data is not the same as knowing:
+  - What it means
+  - What matters
+  - What to do next
+
+.center[
+.hi[This course is about turning sports problems into evidence-informed decisions.]
+]
+
+???
+
+Briefly introduce yourself and your background. Emphasize that the course is not simply a coding class or a statistics class. The central focus is learning how to use evidence to address real problems in sport.
+
+---
+
+# What Will We Do in This Course?
+
+- Translate sports intuition into answerable analytical problems.
+
+- Extract and summarize information from performance, workload, and competition data.
+
+- Analyze patterns, comparisons, trends, and basic statistical models.
+
+- Visualize and communicate findings for sport performance audiences.
+
+- Evaluate assumptions, limitations, bias, and uncertainty in analytical claims.
+
+.center[
+.hi[The goal is not analysis for its own sake. The goal is better decisions.]
+]
+
+---
+
+# Today’s Boundary
+
+We are interested in questions related to:
+
+- Athlete performance and training
+- Scouting, recruiting, and roster decisions
+- Strategy and competition
+
+We are **not** focusing on ticketing, marketing, sponsorship, or other business operations.
+
+.center[
+.hi[Within that boundary, begin with whatever genuinely interests you.]
+]
+
+???
+
+Establish the course boundary without defining the three domains yet. The goal is to prevent business-focused examples while leaving students free to generate their own ideas.
+
+---
+
+class: center, middle
+
+# What Would You Want to Know?
+
+## Start with your own curiosity about sport.
+
+---
+
+# Choose a Starting Point
+
+Think about something you have wondered while:
+
+- Watching a game or competition
+- Playing, coaching, or training for a sport
+- Comparing two athletes
+- Following recruiting or roster decisions
+- Hearing a sports claim that seemed questionable
+
+Possible starting phrases:
+
+- *“I have always wondered why…”*
+- *“How could a team determine whether…”*
+- *“How would we know if…”*
+- *“Should a coach…”*
+
+---
+
+# Think on Your Own First
+
+Identify one sports question, problem, or decision that interests you.
+
+Write down:
+
+1. **What you want to understand**
+2. **Why it interests you**
+3. **Who might care about the answer**
+
+.center[
+.hi[Do not worry about the data or statistical method yet.]
+]
+
+???
+
+Allow approximately 2–3 minutes of individual thinking. This gives every student an idea before group discussion begins and prevents the most confident person from determining the group's direction immediately.
+
+---
+
+# Share and Develop Your Ideas
+
+In your group:
+
+1. Give each person an opportunity to share.
+2. Select one or two ideas to discuss further.
+3. For each selected idea, consider:
+   - What would you need to know?
+   - What evidence might help?
+   - What decision could the answer affect?
+
+.center[
+.hi[You do not need a polished research question or a “correct” method.]
+]
+
+???
+
+Allow approximately 7–10 minutes. Circulate and listen for students' interests, how they define problems, and what they currently consider valid evidence.
+
+---
+
+# What Patterns Do We See?
+
+As groups share, consider:
+
+- Which ideas focus on the athlete or training process?
+- Which focus on evaluating or selecting players?
+- Which focus on decisions made during competition?
+- Which questions cross more than one area?
+
+.center[
+.hi[Can we organize these ideas into a few broad families?]
+]
+
+???
+
+Collect group ideas on the board before displaying the next slide. Ask students whether they notice natural groupings. Their labels do not need to match the course terminology.
+
+---
+
+# Three Domains Organize the Field
+
+1. **Athlete Tracking**
+   - How are athletes training, adapting, and responding?
+
+2. **Scouting and Talent Evaluation**
+   - How do we describe athletes and identify future potential?
+
+3. **Strategy and Tactical Analysis**
+   - How can evidence inform decisions during competition?
+
+.center[
+.hi[These domains organize the field—but real sports problems often overlap.]
+]
+
+???
+
+Map students' examples onto the three domains. Do not force every idea into exactly one category; cross-domain questions are useful examples of the layered nature of applied analytics.
+
+---
+
+# Test the Framework on One Situation
+
+A basketball team ends its season by losing **six of its final eight games**.
+
+- The coach believes the team needs to defend better.
+- The performance staff suspects fatigue accumulated late in the season.
+- The general manager thinks the roster lacks shooting.
+- The scouting staff must identify recruiting priorities for next season.
+
+.center[
+.hi[One situation can create problems across all three domains.]
+]
+
+---
+
+# One Situation, Several Analytical Problems
+
+| What do we want to know? | Possible evidence | Decision-maker | Possible action |
+|:---|:---|:---|:---|
+| Why did the defense decline? | Opponent shots, lineups, game context | Coach | Change strategy |
+| Did fatigue accumulate? | Minutes, workload, recovery measures | Performance staff | Adjust training |
+| What are the roster's weaknesses? | Efficiency, lineup data, player profiles | General manager | Set roster priorities |
+| What type of player should the team recruit? | Team needs, prospect profiles, projected fit | Scouting staff | Target recruits |
+
+???
+
+Use this shared example to consolidate the framework after students have generated their own ideas. The key is connecting a problem to evidence, a stakeholder, and a possible decision.
+
+---
+
+# Analytics Begins Before the Dataset
+
+- A dataset does not tell us which problem matters.
+
+- Different stakeholders may interpret the same situation differently.
+
+- Useful analysis depends on:
+  - The question being asked
+  - The quality and relevance of the evidence
+  - The decision that must be made
+
+.center[
+.hi[Start with the decision—not the fanciest available method.]
+]
+
+---
+
+# Different Questions Require Different Answers
+
+- **Descriptive:** What happened?
+
+- **Diagnostic:** Why might it have happened?
+
+- **Predictive:** What is likely to happen next?
+
+- **Prescriptive:** What should we do?
+
+.center[
+The same sports problem may require .hi[several layers of analysis].
+]
+
+???
+
+Treat this as a preview rather than a complete lecture. Connect each type to examples raised during the activity. The four types of analytical questions will be developed more fully later.
+
+---
+
+# Most Analytics Is Not a Fancy Model
+
+- Defining the problem clearly
+- Finding and organizing usable data
+- Checking whether measurements can be trusted
+- Summarizing what happened
+- Creating understandable visualizations
+- Communicating uncertainty and limitations
+
+.center[
+.hi[Complexity is not the same as usefulness.]
+]
+
+???
+
+Emphasize that descriptive work is not inferior work. Much of daily applied analytics involves building trustworthy foundations and producing clear information for decision-makers.
+
+---
+
+# How the Semester Builds These Skills
+
+- **Foundations:** What sport analytics is and what questions it can answer
+- **Data:** Sources, structure, quality, validity, reliability, and ethics
+- **Description:** Center, spread, distributions, and athlete profiling
+- **Visualization:** Showing patterns clearly and honestly
+- **Relationships:** Association, regression, and interpretation
+- **Decisions:** Thresholds, probabilities, models, and communication
+- **Application:** A semester-long group project
+
+---
+
+# How You Will Learn and Be Assessed
+
+- **Twelve quizzes:** Review the previous week's material; the two lowest scores are dropped.
+
+- **In-class activities:** Apply concepts to sports problems and earn participation credit.
+
+- **Four case studies:** Interpret data, evaluate methods, visualize findings, and reflect on analytical choices.
+
+- **Journal article discussion:** Present and discuss peer-reviewed sport analytics research.
+
+- **Midterm and final exam:** Demonstrate your understanding of concepts, applications, and the final project.
+
+.center[
+.hi[Participation means thinking, questioning, and contributing—not already knowing everything.]
+]
+
+---
+
+# The Analytics Project
+
+In a small group, you will complete an in-depth investigation of an approved sport performance analytics topic.
+
+Your project will move through:
+
+1. **Topic and background**
+2. **Project proposal**
+3. **Data analysis and visualization**
+4. **Abstract**
+5. **In-class presentation**
+
+.center[
+.hi[The project follows the same problem-to-decision process we began today.]
+]
+
+---
+
+# Policies You Need to Know
+
+- **Canvas:** Check it frequently and enable notifications. There is no required textbook.
+- **Communication:** Email me directly; do not use Canvas messages. Allow up to 48 hours for a response.
+- **Attendance:** In-class activities count toward attendance and cannot be made up.
+- **Deadlines:** Late quizzes and exams are not accepted. Other late work loses 10% per day unless arranged in advance.
+- **Technology:** You need access to a computer with Microsoft Excel and LockDown Browser.
+- **Generative AI:** Its use on course assignments is prohibited under the course academic-integrity policy.
+
+.center[
+Read the full syllabus so you understand the details and exceptions.
+]
+
+???
+
+Briefly explain the policies students need in order to operate successfully in the course. Direct students to the full syllabus for university policies and detailed language rather than reading it word for word.
+
+---
+
+# Before You Leave
+
+Respond briefly to the following:
+
+1. Which area of sport performance analytics interests you most?
+2. What experience do you have with sports, statistics, spreadsheets, or coding?
+3. What is one sports question you would like data to help answer?
+
+???
+
+Collect responses through Canvas, a form, an index card, or another preferred method. Use them to assess students' backgrounds and identify examples that may engage the class later.
+
+---
+
+# The Analytical Process Starts With a Problem
+
+Today, you:
+
+1. Began with something you genuinely wanted to understand
+2. Developed the idea through discussion
+3. Considered what evidence and decisions were involved
+4. Organized the problem within the broader field
+
+.center[
+.hi[The methods will become more sophisticated. The basic process will remain the same.]
+]
+
+---
+
+# Looking Ahead
+
+- **Next Class:** Evolution of sports analytics
+
+- **Before Next Class:**
+  - Read the syllabus
+  - Think of one sports decision that could be informed by data
+
+.center[
+Come prepared to question what we measure—and what our measurements leave out.
+]
