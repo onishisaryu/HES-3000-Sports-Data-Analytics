@@ -8,27 +8,27 @@
 
 ## Week 2: The Modern Sports Landscape & Asking Good Questions
 - Class 1: Overview of the three domains (Tracking, Scouting, Strategy) and how data changes sports decisions.
-- Class 2: Translating sports intuition and coach questions into testable analytical problems. Case study discussion on defining the right questions before touching data.
+- Class 2: Translating sports intuition and practitioner concerns into testable analytical questions while avoiding the streetlight effect. Introduction to the group project.
 
-## Week 3: Project Kickoff & Brainstorming (Asynchronous Week Start)
-- Class 1 (Asynchronous / At-Home): Remote working session focused on brainstorming analytical questions. Students independently draft potential research questions and explore initial areas of interest before data collection.
-- Class 2 (In-Class): Project Kickoff and Data Sources: Introduce group project expectations, review potential datasets, and discuss how to guard against purely random "fishing" expeditions.
+## Week 3: Questions to Data
+- Class 1 (At-Home): Case study focused on brainstorming analytical questions and conducting an initial data search.
+- Class 2 (In-Class): Discussion of the case study, review of the group project, and introduction to how sport data are generated and collected. - be careful not to get into week 4 class 2 material.
 
-## Week 4: Athlete Data Issues & Analytical Scope
+## Week 4: Understanding and Evaluating Sport Data
 - Class 1: Understanding data characteristics, structures, formats, and common problems with sports datasets, including messy spreadsheets and basic data hygiene.
 - Class 2: Athlete data issues, including validity, reliability, privacy, consent, and the ethics of collecting and using athlete information.
 
-## Week 5: Defining Scope & Descriptive Statistics
-- Class 1: Defining the scope of analytics: Descriptive (what happened), Diagnostic (why it happened), Predictive (what is likely to happen), and Prescriptive (what should be done).
+## Week 5: Data Visualization I & Descriptive Statistics
+- Class 1: Principles of honest charts; visualizing quantities and distributions in sports.
 - Class 2: Measures of center, spread, and distributions. Project tie-in: Students run preliminary descriptive statistics on their project data. BONUS: Looking at group and positional differences.
 
-## Week 6: Data Visualization Fundamentals
-- Class 1: Principles of honest charts; visualizing quantities and distributions in sports.
-- Class 2: Visualizing proportions and relationships. Case Study / Project Lab: Students apply visualization techniques to sports data.
+## Week 6: Data Visualization II + Midterm Review 
+- Class 1: Visualizing proportions and relationships. Case Study / Project Lab: Students apply visualization techniques to sports data.
+- Class 2: Midterm review session, Q&A, and workflow recap.
 
-## Week 7: Midterm Review & Midterm Exam 1
-- Class 1: Midterm review session, Q&A, and workflow recap.
-- Class 2: Midterm Exam 1.
+## Week 7: Exam 1
+- Class 1: Midterm Exam 1
+- Class 2: blank for now
 
 ## Week 8: Exploring Relationships & Prediction
 - Class 1: Understanding association and how variables move together in sports. Emphasis on why association does not necessarily indicate causation or provide a useful prediction.
