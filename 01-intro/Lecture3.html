@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Lecture 3</title>
+    <title>Week 2, Class 2</title>
     <meta charset="utf-8" />
     <meta name="author" content="Saryu Onishi" />
     <script src="Lecture3_files/header-attrs-2.29/header-attrs.js"></script>
@@ -14,164 +14,509 @@
     <textarea id="source">
 
 
----
+class: title-slide
 
-# Week 2, Class 1: Roadmap
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-- **Where We Are:**
-  - Last week, we mapped the evolution of sports analytics and our three core pillars (Tracking, Scouting, Strategy)[cite: 1].
-  
-- **Today's Focus:**
-  - How do we bridge the gap between abstract coaching intuition ("our defense feels slow") and a rigorous, testable analytical problem?
+# Week 2, Class 2
 
-- **The Core Rule:**
-  - Before touching a line of code or an Excel spreadsheet, you must define the exact question you are trying to answer.
+## From Sports Concerns to Analytical Questions
 
----
+### Saryu Onishi
 
-# The Reality of Sports Organizations
-
-- **The Clash of Cultures:**
-  - Coaches, athletes, and traditional scouts operate on instinct, experience, and visual memory.
-  - Analysts operate on data, code, structures, and statistical probabilities.
-
-- **The Bridge:**
-  - An analyst's primary job is **not** to write complex code.
-  - An analyst's primary job is to **translate human intuition into precise, testable research questions**.
+### HES 3000-002, Sport Performance Analytics
 
 ---
 
-# Coaches' Language vs. Analysts' Language
+# Start With Something You Notice
 
-- **Example 1: The "Lazy" Player**
-  - *Coach:* "We need players who just have a motor and want it more."
-  - *Analyst:* "How do high-intensity acceleration counts and late-game deceleration drop-offs correlate with success rates in transition defense?"
+Think of one observation, concern, or belief about sport that you would like to investigate.
 
-- **Example 2: The "Clutch" Performer**
-  - *Coach:* "She always steps up when the game is on the line."
-  - *Analyst:* "What is the player's true shooting percentage (TS%) relative to baseline when the point differential is `\(\le 5\)` points in the final 4 minutes of a match?"
+Examples:
 
----
+- “Our team fades late in games.”
+- “This prospect looks better than the statistics suggest.”
+- “Some athletes do not recover well after hard practices.”
 
-# The Anatomy of a Good Research Question
+.center[
+### Write yours in one sentence. Do not turn it into a formal question yet.
+]
 
-- **Four Essential Criteria:**
-    1. **Specific:** Clear variables, explicit populations, and well-defined metrics.
-    2. **Measurable:** Backed by data that you can actually collect or access.
-    3. **Actionable:** The answer must change a real decision (training load, roster build, or in-game tactic).
-    4. **Falsifiable:** It must be possible for the data to prove your hypothesis *wrong*.
+???
 
----
+Timing: 4 minutes.
 
-# The Danger of Vague Questions
-
-- **Why Vague Questions Fail:**
-  - "Are we playing well?" `\(\rightarrow\)` Too broad; leads to cherry-picking stats that confirm pre-existing biases.
-  - "Why did we lose?" `\(\rightarrow\)` Too retrospective; confounds luck, execution, and strategy into a single messy narrative.
-
-- **The Fix:**
-  - Break macro problems down into micro components across our three core domains: Tracking, Scouting, and Strategy.
+Give students 90 seconds to write independently, then ask them to share with a partner. Collect two or three examples for use later in the lecture. The purpose is to begin with their sports thinking rather than analytical terminology.
 
 ---
 
-# Introduction to the Question-Framing Activity
+# A Concern Is a Starting Point, Not Yet a Question
 
-- **The Challenge Ahead:**
-  - For your upcoming group projects, you will be tasked with turning a messy sports problem into a rigorous project.
-  - Today, we are going to practice this process hands-on as a class.
+“Our team fades late in games” leaves several things unresolved:
 
-- **The Setup:**
-  - We will look at a common scenario faced by a professional coaching staff.
-  - You will work in groups to build specific, testable questions across all three analytics domains.
+- What does **fades** mean?
+- Which team, players, games, or situations?
+- Compared with what?
+- What evidence would support or challenge the belief?
+- What decision would change if the belief were true?
 
----
+.center[
+.hi[Analysis becomes possible when important words become observable and the purpose becomes clear.]
+]
 
-# Case Study Context: The Struggling Second Half
+???
 
-- **The Scenario:**
-  - Imagine you are hired as the performance analytics staff for a professional soccer club.
-  - **The Head Coach's Complaint:** *"Our team looks totally flat and unorganized after the 65th minute. We are getting out-run, losing tactical shape, and conceding late goals."*
-  - The coach wants you to "look at the data and fix it."
+Timing: 3 minutes.
 
-- **The Trap:**
-  - Simply dumping all GPS, tracking, and match event data into a spreadsheet and looking for patterns.
+Do not frame the original statement as bad. It is useful practitioner knowledge, but it is not yet precise enough to guide data collection or analysis.
 
 ---
 
-# Domain 1 Focus: Tracking &amp; Physical Load
+# Good Questions Connect Curiosity to a Decision
 
-- **The Physical Hypothesis:**
-  - Late-game breakdown is caused by cumulative fatigue and poor physical load management during the week.
+A useful analytical question identifies:
 
-- **Your Task (Group Discussion - 5 mins):**
-  - Translate the coach's complaint into **two testable tracking questions**.
-  - *Hint:* Think about external load (distance, accelerations), internal load (RPE, heart rate), and pacing profiles.
+1. **The decision or purpose** — Why do we need the answer?
+2. **The outcome** — What are we trying to understand?
+3. **The comparison** — Relative to whom, what, or when?
+4. **The context** — Under which conditions?
+5. **The evidence** — What observations could answer it?
 
----
+.center[
+### The question is the bridge between the sport problem and the analysis.
+]
 
-# Domain 2 Focus: Scouting &amp; Roster Depth
+???
 
-- **The Personnel Hypothesis:**
-  - Late-game failure is caused by a drop-off in bench productivity and physical sustainability relative to our opponents' substitutes.
+Timing: 3 minutes.
 
-- **Your Task (Group Discussion - 5 mins):**
-  - Translate the coach's complaint into **two testable scouting/roster questions**.
-  - *Hint:* Think about player profiling, physical benchmarks for substitutes, and squad depth metrics.
-
----
-
-# Domain 3 Focus: Strategy &amp; Tactical Optimization
-
-- **The Tactical Hypothesis:**
-  - Late-game disorganization is caused by structural defensive shifts and poor spatial positioning when players fatigue.
-
-- **Your Task (Group Discussion - 5 mins):**
-  - Translate the coach's complaint into **two testable strategy questions**.
-  - *Hint:* Think about formation spacing, defensive recovery speed, and tactical adjustments in the final third of the match.
+Briefly connect this to the prior class: the domain tells us where the problem lives, and the analytical purpose tells us what kind of answer is needed. Today focuses on making the question answerable.
 
 ---
 
-# Class Share-Out: Comparing Questions
+# Begin With the Decision
 
-- **Discussion:**
-  - Let's hear what tracking, scouting, and strategy questions your groups formulated.
-  - How do these questions change the kind of data we need to pull?
+Imagine a coach says:
 
-- **Key Takeaway:**
-  - A single coaching complaint spawns dozens of distinct analytical paths. Framing forces you to choose the *right* path before wasting hours on dead-end data exploration.
+.center[
+### “I want to know whether our players are tired.”
+]
 
----
+Possible decisions include:
 
-# Avoiding the "Fishing Expedition" Trap
+- Should today's practice be modified?
+- Should a player's minutes be restricted tomorrow?
+- Should the weekly training plan change?
+- Should the team adopt a new recovery strategy?
 
-- **What is Data Fishing?**
-  - Running endless, unguided queries across massive datasets until you find a statistically significant pattern purely by random chance (`\(p &lt; 0.05\)`).
+.center[
+.hi[The same concern can lead to different questions because the decisions are different.]
+]
 
-- **The Dangers:**
-  - **Spurious Correlations:** Finding relationships that look meaningful but are entirely coincidental.
-  - **Overfitting:** Building models that explain past random noise rather than future real-world performance.
+???
 
-- **The Defense:** 
-  - Ground your analysis in domain knowledge and framed hypotheses *before* looking at the numbers.
+Timing: 3 minutes.
 
----
-
-# From Question to Data: The Next Steps
-
-- **Once the Question is Framed:**
-  - 1. Identify the exact data sources required (e.g., GPS tracking logs, event streams, optical tracking).
-  - 2. Define your unit of analysis (e.g., per player, per match, per 5-minute interval).
-  - 3. Establish your baseline expectations before running models.
+Ask students what information would matter for each decision. Highlight how timeframe, comparison, and acceptable uncertainty change with the decision.
 
 ---
 
-# Summary &amp; Looking Ahead
+# Define the Outcome Before Choosing the Metric
 
-- **Key Takeaway:** Great analytics doesn't start with data; it starts with a well-framed, testable question grounded in domain knowledge.
+“Fatigue” could refer to:
 
-- **Next Class (Week 2, Class 2):** **Project Kickoff!** We introduce group project expectations. You will begin brainstorming your initial research questions and identifying potential datasets for your semester assignments.
+- Reduced physical performance
+- Increased perceived effort
+- Muscle soreness
+- Lower motivation or alertness
+- Incomplete recovery from recent training
 
-- **For Next Time:** Come to class with two potential sports performance topics you might want to investigate for your group project.
+.center[
+### A metric represents one part of a concept; it is not automatically the concept itself.
+]
+
+???
+
+Timing: 2 minutes.
+
+Use this to introduce operationalization without relying heavily on the term. A countermovement-jump metric, wellness score, or heart-rate response may provide evidence about fatigue, but none is a universal fatigue detector.
+
+---
+
+# Comparisons Give Numbers Meaning
+
+Consider: “Did the athlete complete a high workload?”
+
+High compared with:
+
+- The athlete's usual workload?
+- The planned workload?
+- Teammates at the same position?
+- Competition demands?
+- A threshold associated with a particular goal?
+
+.center[
+.hi[Without a reference point, “high,” “low,” “good,” and “poor” are usually empty labels.]
+]
+
+???
+
+Timing: 2 minutes.
+
+Ask which comparison would be most appropriate if the decision is whether to modify tomorrow's training. There may be more than one defensible answer; require students to connect their choice to the decision.
+
+---
+
+# Context Determines What the Comparison Means
+
+The same performance value may mean something different depending on:
+
+- Position or role
+- Opponent quality
+- Game state
+- Training phase
+- Injury or return-to-play status
+- Age and competition level
+
+.center[
+### Useful questions define enough context to make the answer interpretable.
+]
+
+???
+
+Timing: 2 minutes.
+
+Avoid turning this into a demand to include every possible variable. The goal is to identify context that is material to the question.
+
+---
+
+# From Concern to Question
+
+### Initial concern
+
+“Our team fades late in games.”
+
+### More useful question
+
+“During conference games this season, does our team's scoring efficiency decline in the fourth quarter compared with the first three quarters, and is the pattern different in close games?”
+
+This revision defines:
+
+- **Outcome:** scoring efficiency
+- **Comparison:** fourth quarter versus earlier quarters
+- **Context:** conference games and close-game situations
+
+???
+
+Timing: 3 minutes.
+
+Ask what remains unresolved. Possible answers include the definition of scoring efficiency, the definition of a close game, whether overtime is included, and what decision the analysis would inform. Emphasize that questions can be refined iteratively.
+
+---
+
+# Precision Does Not Mean Making the Question Tiny
+
+Too broad:
+
+&gt; What makes a basketball team successful?
+
+More focused:
+
+&gt; How does turnover rate relate to offensive efficiency across conference games?
+
+Too narrow:
+
+&gt; Did one turnover with 4:12 remaining cause Tuesday's loss?
+
+.center[
+.hi[A useful scope is narrow enough to investigate but broad enough to matter.]
+]
+
+???
+
+Timing: 2 minutes.
+
+Explain that scope depends on the decision, available observations, and the level of confidence needed. Narrower is not automatically better.
+
+---
+
+# Be Careful With Causal Language
+
+These questions do not ask the same thing:
+
+- Did greater workload **cause** poorer shooting?
+- Was greater workload **associated with** poorer shooting?
+- Did poorer shooting occur **after** periods of greater workload?
+- Do players with greater workload **tend to** shoot worse?
+
+.center[
+### The wording of the question should match what the evidence can support.
+]
+
+???
+
+Timing: 3 minutes.
+
+Explain that a relationship, sequence, or group difference does not by itself establish causation. Keep the discussion conceptual; causal inference will be revisited later.
+
+---
+
+# Activity: Diagnose the Question
+
+### “Does PlayerLoad affect performance?”
+
+With your group, identify what is missing or ambiguous:
+
+- What decision or purpose?
+- What outcome?
+- What comparison?
+- Which athletes and timeframe?
+- What does “affect” claim?
+
+Then rewrite the question.
+
+???
+
+Timing: 5 minutes.
+
+Allow 3 minutes for group work and 2 minutes for discussion. Accept several defensible revisions. Listen for students treating PlayerLoad as both the construct and the measure, leaving performance undefined, or retaining causal language without a design that could support it.
+
+---
+
+# One Possible Revision
+
+### Decision
+
+Should the coaching staff modify practice volume before games?
+
+### Question
+
+“Among players who appear in at least 15 minutes, is PlayerLoad accumulated during the two days before a game associated with fourth-quarter shooting efficiency?”
+
+### Still open for refinement
+
+- Is PlayerLoad the most relevant measure?
+- Is shooting efficiency the right outcome?
+- What other context might explain the relationship?
+
+???
+
+Timing: 2 minutes.
+
+Present this as one defensible revision, not the answer. Point out that a precise question can still rest on questionable measurement choices.
+
+---
+
+# The Streetlight Effect
+
+&lt;br&gt;
+
+.center[
+## We tend to search where the data are easiest to see—
+
+## not necessarily where the answer is most likely to be found.
+]
+
+???
+
+Timing: 2 minutes.
+
+Briefly tell the streetlight story: someone searches for lost keys under a streetlight because the light is better there, even though the keys were lost elsewhere. Connect the metaphor to convenient sport datasets.
+
+---
+
+# Available Data Can Quietly Rewrite the Question
+
+### Original concern
+
+Why does the team struggle to create good shots against zone defense?
+
+### Available spreadsheet
+
+Player points, rebounds, assists, and minutes
+
+### Convenient replacement question
+
+Who scores the fewest points?
+
+.center[
+.hi[The replacement is answerable, but it does not answer the original concern.]
+]
+
+???
+
+Timing: 3 minutes.
+
+Ask what information might be more relevant: possession type, shot location, defensive alignment, ball movement, video, or play-by-play sequence. The appropriate response may be to collect different data, narrow the claim, or admit the current data cannot answer the question.
+
+---
+
+# Data Availability Matters—But It Should Not Lead
+
+A practical sequence:
+
+1. Define the sport concern and decision.
+2. Write the ideal question.
+3. Identify the evidence the question requires.
+4. Inspect what data are actually available.
+5. Revise the scope without changing the question's purpose.
+6. State what the available data cannot establish.
+
+.center[
+### Feasibility should refine the question, not replace it.
+]
+
+???
+
+Timing: 3 minutes.
+
+Clarify that analysts cannot ignore feasibility. The problem arises when convenience silently becomes the rationale for the analysis.
+
+---
+
+# Quick Test: Question or Data Fishing?
+
+Which starting point is stronger?
+
+### A
+
+“We have GPS data. What relationships can we find?”
+
+### B
+
+“The coaching staff wants to know whether high-intensity exposure during practice reflects the demands guards face in games.”
+
+.center[
+.hi[B gives the analysis a purpose, population, comparison, and path to a decision.]
+]
+
+???
+
+Timing: 2 minutes.
+
+Do not imply exploratory analysis is illegitimate. It can reveal patterns and generate hypotheses, but it should be labeled exploratory and should not be dressed up afterward as if every result had been predicted.
+
+---
+
+# A Question Can Be Useful Even If the Answer Is “We Cannot Tell”
+
+Sometimes the honest conclusion is that:
+
+- The required variable was not measured.
+- The comparison group is inappropriate.
+- The sample is too limited.
+- The measurement does not represent the intended concept.
+- The design cannot support the claimed explanation.
+
+.center[
+### Recognizing the limit is analytical work—not analytical failure.
+]
+
+???
+
+Timing: 2 minutes.
+
+Reinforce that a clean graph cannot rescue a mismatch between the question and evidence. This is a useful norm to establish before the group project.
+
+---
+
+# Group Project: Begin With the Problem
+
+Your group will develop a sport analytics project that connects:
+
+- A sport observation, concern, or decision
+- A focused analytical question
+- Appropriate and obtainable data
+- An analysis that matches the question
+- A clear interpretation for the intended audience
+
+.center[
+.hi[Your project is not “analyze a dataset.” The dataset is evidence for a question.]
+]
+
+???
+
+Timing: 3 minutes.
+
+Introduce the project at the level of its intellectual structure. Review formal requirements, milestones, grading, and submission details using the course project instructions rather than crowding this slide.
+
+---
+
+# Today: Establish the Project Direction
+
+With your group, identify:
+
+1. A sport or domain that interests you
+2. A real observation, concern, or decision
+3. Who would use the answer
+4. An initial analytical question
+5. The ideal evidence needed
+6. Data sources that may be feasible
+
+.center[
+### Keep the concern and the question separate—you will revise both.
+]
+
+???
+
+Timing: 6 minutes.
+
+Circulate among groups. Push groups that begin with a dataset to explain the decision it could inform. Push groups with very broad topics to identify a specific outcome and comparison. Do not require a final question today.
+
+---
+
+# Project Check: Is the Question Worth Pursuing?
+
+Before committing, ask:
+
+- Does the answer matter to someone?
+- Is the outcome clearly defined?
+- Is there a meaningful comparison?
+- Is the scope realistic?
+- Could evidence challenge our initial belief?
+- Are we answering the concern—or merely using convenient data?
+
+???
+
+Timing: 2 minutes.
+
+Have each group use the checklist on its current idea. The question should be revisable; the objective is to expose uncertainty early.
+
+---
+
+# Exit Ticket
+
+Submit three sentences:
+
+1. **Concern:** What sport observation, belief, or decision interests your group?
+2. **Question:** What is your current analytical question?
+3. **Risk:** What is the biggest mismatch that might exist between the question and available data?
+
+???
+
+Timing: 2 minutes.
+
+Collect these responses for feedback before groups invest heavily in data searching. If the group project has not yet been formally assigned, students may complete the exit ticket individually.
+
+---
+
+# The Question Sets the Direction
+
+- Start with a sport concern or decision.
+- Define the outcome, comparison, and context.
+- Use causal language only when the evidence supports it.
+- Let feasibility refine the scope without replacing the purpose.
+- Treat limitations as part of the answer.
+
+.center[
+### Next: How sport data are generated, structured, and limited.
+]
+
+???
+
+Timing: 1 minute.
+
+Return to one opening concern from a student and ask the class to name one improvement they would now make to it. Close by emphasizing that better analysis begins before code is written.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
