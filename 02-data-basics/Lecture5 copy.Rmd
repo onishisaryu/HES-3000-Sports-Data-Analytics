@@ -1,0 +1,159 @@
+---
+title: "Understanding Your Data: Characteristics & Quality"
+subtitle: "HES 3000: Sport Performance Analytics"
+author: "Lecture Presentation"
+date: "Fall 2026"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+library(dplyr)
+library(ggplot2)
+```
+
+## The Data Hunt: Recap
+
+**You found data. Now what?**
+
+In our last activity, you hunted down sports performance datasets. You might have downloaded a CSV of game stats, pulled an open-source tracking dataset, or exported wellness questionnaires.
+
+Before we can analyze, visualize, or model this data, we have to understand its "personality."
+
+**Today's Goals:**
+1. Identify the fundamental types and structures of your data.
+2. Understand sampling rates and time-series nuances in sports tech.
+3. Assess the "shape" (Wide vs. Long) of your data.
+4. Evaluate data quality (Validity, Reliability, Missingness).
+
+---
+
+## The Anatomy of a Dataset
+
+In most applied analytics, we look at rectangular data (data frames).
+
+- **Rows = Observations:** Depending on the context, a single row could be:
+  - One athlete's daily session summary.
+  - One jump on a force plate.
+  - One millisecond of GPS tracking data.
+- **Columns = Variables:** The specific metrics or identifiers being recorded (e.g., `Athlete_ID`, `Session_Date`, `PlayerLoad`, `Max_Velocity`).
+
+*Question for your dataset:* What exactly does one single row represent? If you don't know this, you cannot analyze the data.
+
+---
+
+## Data Types in R: What are we looking at?
+
+When you load your data into R, the software categorizes every column. Misunderstood data types lead to broken code.
+
+*   **Numeric (Continuous):** Can be any value, including decimals.
+    *   *Example:* Sprint speed (32.4 km/h), Peak Force (2450.5 N).
+*   **Integer (Discrete):** Whole numbers. 
+    *   *Example:* Number of sprints > 20km/h, Goals scored.
+*   **Character / String:** Text data.
+    *   *Example:* "Forward", "Home", "Away".
+*   **Factor:** Categorical data with a set number of levels.
+    *   *Example:* RPE (Rate of Perceived Exertion) from 1 to 10.
+*   **Date / POSIXct:** Time data (crucial for sports!).
+    *   *Example:* `2026-09-09 14:30:00`
+
+---
+
+## Code Check: Getting to Know Your Data
+
+The first step after importing your CSV is looking under the hood. The `glimpse()` function from `dplyr` is your best friend.
+
+```{r}
+# Assuming you loaded a dataset called 'gps_session'
+library(dplyr)
+
+glimpse(gps_session)
+```
+
+**What to look for in the output:**
+- Are your dates actually reading as `<date>` or did R read them as `<chr>` (text)?
+- Are your metrics (like `PlayerLoad`) reading as `<dbl>` (numeric), or did a stray comma turn them into characters?
+
+---
+
+## Sensor Nuance: Sampling Rates (Hz)
+
+In sport performance, the *frequency* of data collection fundamentally changes how you handle it.
+
+**Low Frequency (Daily/Weekly)**
+- *Example:* Wellness questionnaires, 1RM testing.
+- *Volume:* Small. Easy to view in Excel.
+
+**Medium Frequency (10Hz - 100Hz)**
+- *Example:* Catapult Vector or other micro-sensor units. (10 data points per second).
+- *Volume:* Large. A 90-minute session generates 54,000 rows *per athlete*.
+
+**High Frequency (1000Hz+)**
+- *Example:* VALD ForceDecks. (1000 data points per second).
+- *Volume:* Massive. A 3-second CMJ generates 3,000 rows of raw data for the left leg, right leg, and total.
+
+---
+
+## Data Structure: Wide vs. Long Data
+
+The shape of your data dictates how easily you can visualize it in `ggplot2`.
+
+**Wide Format (Human Readable)**
+Great for viewing, terrible for graphing. Every variable gets its own column.
+*   *Athlete | Match_1_Load | Match_2_Load | Match_3_Load*
+
+**Long Format (Machine Readable - Tidy Data)**
+Crucial for `ggplot2`. Variables are collapsed into key-value pairs.
+*   *Athlete | Match_Number | Load*
+*   *Smith | 1 | 450*
+*   *Smith | 2 | 480*
+
+---
+
+## Data Quality: The Unsexy Reality
+
+*"Garbage in, garbage out."* 
+
+Before trusting your data, ask these three questions:
+
+1. **Validity:** Does this metric measure what it claims to measure? 
+   - *Example:* Is "High Speed Distance" capturing true sprint effort, or just a slow jog for a fast athlete?
+2. **Reliability:** If the same athlete does the exact same movement tomorrow, will the sensor output the exact same number?
+3. **Missingness:** Why is there an `NA`? 
+   - Did the athlete forget to fill out the survey?
+   - Did the hardware battery die?
+   - Was the athlete injured? (Missing data is sometimes the most important signal!).
+
+---
+
+## Activity: Interrogate Your Dataset (15 Minutes)
+
+Open up RStudio, load the data you found in our last class, and answer these questions with a partner:
+
+1. Use `glimpse()`. How many observations (rows) and variables (columns) do you have?
+2. What does a single row represent in your dataset?
+3. Identify one continuous variable, one categorical (factor) variable, and one character variable.
+4. Do you see any missing values (`NA`)? If so, why do you think they are missing?
+
+```{r}
+# Starter code for the activity:
+my_data <- read.csv("your_downloaded_data.csv")
+glimpse(my_data)
+summary(my_data)
+```
+
+---
+
+## Looking Ahead: Data Cleaning
+
+Now that you know what your data looks like, you probably noticed it's a bit messy. 
+
+Next week, we start **Data Cleaning**. We will use `dplyr` to:
+- Filter out bad rows.
+- Select the columns we actually care about.
+- Mutate (create) new performance variables.
+
+**Homework:** Ensure your dataset is successfully loaded into RStudio and your workspace is saved for next class.
