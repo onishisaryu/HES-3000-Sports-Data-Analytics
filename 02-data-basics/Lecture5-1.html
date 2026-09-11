@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 6</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Saryu Onishi" />
+    <script src="Lecture5-1_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="Lecture5-1_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="Lecture5-1_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="Lecture5-1_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="ou-colors.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide    
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+# Lecture 6
+
+## Understanding Sports Data Characteristics
+
+### Saryu Onishi
+
+### HES 3000-002, Sport Performance Analytics
+
+---
+
+# Where We Are in the Pipeline
+
+- **Last Class:**
+  - Where sports data originates (Leagues, Teams, Vendors)[cite: 1] and how it is collected (Observational, Optical, Wearables, Lab)[cite: 1].
+  
+- **The Next Frontier:**
+  - You have a CSV file in hand. **What does the data actually look like under the hood?**
+
+- **Today's Goal:**
+  - Diagnose data types, evaluate underlying distributions, distinguish signal from noise, and identify missingness before running any statistical analysis in R.
+
+---
+
+# Overview of Data Characteristics
+
+- **1. Data Types &amp; Scales of Measurement**
+  - Continuous, discrete, ordinal, nominal, spatial, and temporal streams.
+
+- **2. Dimensionality &amp; Shape**
+  - Wide vs. Long formats, spatial-temporal density, and high-frequency data structures.
+
+- **3. Noise, Drift &amp; Error**
+  - Measurement error, sensor drift, human observation bias, and outliers.
+
+- **4. Missingness &amp; Anomalies**
+  - Missing Completely at Random (MCAR), Missing at Random (MAR), and Structural Missingness.
+
+---
+
+class: inverse, center, middle
+
+# Part 1: Data Types &amp; Measurement Scales
+
+---
+
+# Scales of Measurement in Performance Data
+
+- **Nominal (Categorical / Unordered):**
+  - *Definition:* Labels or categories without intrinsic numerical order.
+  - *Examples:* Player position (`PG`, `SG`, `SF`), play type (`Pick-and-Roll`, `Isolation`), outcome (`Make`, `Miss`).
+
+- **Ordinal (Ranked / Ordered Categories):**
+  - *Definition:* Categories with a distinct order, but uneven or unknown intervals between ranks.
+  - *Examples:* Player availability status (`Questionable`, `Doubtful`, `Out`), subjective RPE (`1` to `10`), draft board rankings.
+
+- **Practical Consideration:**
+  - You cannot take a meaningful average (`\(\mu\)`) of nominal or ordinal variables!
+
+---
+
+# Continuous vs. Discrete Quantitative Data
+
+- **Discrete (Count Data):**
+  - *Definition:* Values restricted to distinct, whole numbers (`\(z \in \mathbb{Z}_{\ge 0}\)`).
+  - *Examples:* Rebounds, goals scored, pass attempts, foul count.
+  - *Modeling Reality:* Poisson or Negative Binomial distributions (not Gaussian bell curves).
+
+- **Continuous (Measured Data):**
+  - *Definition:* Infinite possible values within a continuum (`\(x \in \mathbb{R}\)`).
+  - *Examples:* Sprint speed (`\(\text{m/s}\)`), peak impact force (`\(\text{N}\)`), jump height (`\(\text{cm}\)`), heart rate recovery (`\(\text{bpm}\)`).
+  - *Modeling Reality:* Often assumed Gaussian, but heavily subject to skewness in elite populations.
+
+---
+
+# Spatial &amp; Temporal Data Types
+
+- **Spatial Coordinates (`\(x, y, z\)`):**
+  - *Definition:* Positional markers tracking location on a pitch, court, or rink relative to an origin `\((0,0)\)`.
+  - *Examples:* Shot coordinates, defender tracking paths, player heatmaps.
+  - *Key Trait:* Requires spatial autocorrelation considerations (near points depend on each other).
+
+- **Temporal / Time-Series Streams (`\(t\)`):**
+  - *Definition:* Sequential measurements ordered across time increments.
+  - *Examples:* 10Hz GPS velocity profiles, possession elapsed time, season-long cumulative load.
+  - *Key Trait:* High temporal autocorrelation (a player's speed at frame `\(t\)` heavily predicts speed at frame `\(t+1\)`).
+
+---
+
+class: inverse, center, middle
+
+# Part 2: Data Structure &amp; Dimensionality
+
+---
+
+# Data Structure: Wide vs. Long Formats
+
+- **Wide Format (Spreadsheet Native):**
+  - Each subject gets one single row; multiple time points or tests are spread across columns.
+  - *Example:* `Player_ID | Jump_Height_Week1 | Jump_Height_Week2 | Jump_Height_Week3`
+  - *Use Case:* Easy for human viewing in Excel, quick univariate comparisons.
+
+- **Long Format (Tidy / Analytics Native):**
+  - Each row represents a single observation per time point per entity.
+  - *Example:* `Player_ID | Week | Jump_Height`
+  - *Use Case:* Required for group comparisons, time-series plotting (`ggplot2`), and multilevel modeling in R.
+
+- **Rule of Thumb:** Store data long; reshape wide only for executive summaries or dashboards.
+
+---
+
+# Sampling Frequency &amp; Data Volume
+
+- **Frequency (`\(Hz = \text{samples per second}\)`):**
+  - **1 Hz (Macro):** Event logs, box scores, daily wellness survey responses.
+  - **10 Hz (Wearable/GPS):** Player tracking coordinates, velocity, accelerations (10 snapshots/sec).
+  - **100 Hz - 1000 Hz (Biomechanics):** Raw force plate signals, EMG, 3D motion capture.
+
+- **The Trade-Off:**
+  - Higher sampling frequency = Higher fidelity to capture rapid movement (e.g., rate of force development).
+  - Higher sampling frequency = Exponential expansion of file sizes and processing overhead.
+
+---
+
+class: inverse, center, middle
+
+# Part 3: Signal vs. Noise &amp; Measurement Errors
+
+---
+
+# Defining Signal, Noise, and Error
+
+- **The Observed Value Equation:**
+
+`$$\text{Observed Measurement} = \text{True Value} + \text{Systematic Error} + \text{Random Noise}$$`
+
+- **Signal:**
+  - The true underlying physical phenomenon or tactical behavior you are trying to measure.
+
+- **Noise:**
+  - Unwanted, random fluctuations that obscure the true signal (e.g., electrical interference, slight sensor movement).
+
+- **Error:**
+  - Systematic bias or distortion introduced during the collection process.
+
+---
+
+# Sources of Noise &amp; Error in Sports Data
+
+- **1. Hardware &amp; Sensor Noise:**
+  - Satellite loss in GPS units near stadium roofs, sensor displacement inside a tight jersey vest.
+
+- **2. Environmental Interference:**
+  - Temperature fluctuations affecting metabolic carts, indoor signal bounce for Local Positioning Systems (LPS).
+
+- **3. Human &amp; Observational Bias:**
+  - Inter-operator variability in video tagging (e.g., Home scorer recording more generous assist/tackle counts).
+
+- **4. Sensor Drift:**
+  - Mechanical or thermal calibration shifting over the course of a 2-hour game or a full season.
+
+---
+
+# Identifying Outliers vs. Genuine Extremes
+
+- **The Analytics Dilemma:** Is an extreme data point a sensor glitch or elite performance?
+
+- **Data Artifact (Noise):**
+  - *Example:* A GPS vest recording a peak speed of `\(48 \text{ km/h}\)` for a soccer player due to satellite dropping.
+  - *Action:* Must be filtered or truncated (physiologically impossible human speed).
+
+- **True Outlier (Signal):**
+  - *Example:* An NBA player recording a 48-inch Countermovement Jump height on force plates.
+  - *Action:* Must be retained—this represents elite athletic outlier performance.
+
+- **Rule:** Never delete an outlier without domain context explaining *why* it is physically impossible!
+
+---
+
+class: inverse, center, middle
+
+# Part 4: Missingness &amp; Data Anomalies
+
+---
+
+# Types of Missing Data in Sports
+
+- **1. Missing Completely at Random (MCAR):**
+  - Missingness has no relationship to any observed or unobserved variable.
+  - *Example:* A GPS vest battery randomly dies on 1 athlete halfway through practice.
+
+- **2. Missing at Random (MAR):**
+  - Missingness is systematically related to an observed variable, but not the missing value itself.
+  - *Example:* Bench players have missing tracking data because they play fewer minutes (predictable via playing time).
+
+- **3. Missing Not at Random (MNAR / Structural Missingness):**
+  - Missingness depends directly on the unobserved value itself.
+  - *Example:* An injured athlete does not complete a weekly jump test *because* their fatigue/pain level is too high.
+
+---
+
+# Handling Missing Data: Common Pitfalls
+
+- **Pitfall 1: Complete Case Analysis (Listwise Deletion)**
+  - Deleting all rows with *any* missing variable.
+  - *Risk:* Dramatically reduces sample size and introduces severe selection bias if data is MNAR.
+
+- **Pitfall 2: Mean Imputation**
+  - Replacing missing cells with the overall column average.
+  - *Risk:* Artificially shrinks variance (`\(\sigma^2\)`) and distorts true physiological relationships.
+
+- **The Pragmatic Approach:**
+  - Identify *why* data is missing first.
+  - For minor MCAR: Simple imputation or filtering.
+  - For structural MNAR: Document the missingness context explicitly (e.g., treat "Did Not Play" as a distinct state, not `NA`).
+  
+---
+
+class: inverse, center, middle
+
+# Part 5: In-Class Diagnostic Workshop
+
+---
+
+# Workshop: "Diagnose This Messy Dataset"
+
+- **Scenario:** A colleague emails you a CSV tracking athlete performance across a training block. Look at this raw snippet:
+
+.center[
+```text
+ID, Name, Pos, Readiness, Peak_Speed_mph, GPS_Dist_m, Session_RPE
+101, J. Smith, PG, High, 24.8, 4120, 7
+102, M. Davis, C, Moderate, NA, 3850, 8
+103, T. Johnson, SF, 8/10, 14.2, 12400, NA
+104, A. Lee, SG, Low, 42.1, 0, DNP
+```
+]
+
+
+- **Group Task (8 Minutes):**
+  - Work with a partner to identify **5 distinct data characteristic flaws or anomalies** in this 4-row snippet.
+  - Classify each issue using today's framework (Data Type Error, Outlier/Noise, Sampling Flaw, or Missingness Mechanism).
+
+---
+
+# Workshop Solutions &amp; Share-Out
+
+- **1. Scale/Type Mismatch:** `Readiness` mixes categorical text (`High`, `Low`) with numeric strings (`8/10`). R will parse this entire column as `character`!
+- **2. Unrealistic Speed Outlier (Noise):** `Peak_Speed_mph = 42.1` for ID 104 is humanly impossible (Usain Bolt peaked ~27.8 mph). This is a sensor glitch/GPS spike.
+- **3. Improbable Distance (Sampling/Data Error):** `GPS_Dist_m = 12400` (~7.7 miles) in a single basketball session vs. `0` for an active player.
+- **4. Structural Missingness (MNAR):** `Session_RPE = DNP` for ID 104. "Did Not Play" is a structural state, not a missing numerical value.
+- **5. MAR/MCAR Missingness:** `Peak_Speed_mph = NA` for ID 102 (Center). Is it sensor failure (MCAR) or did the player not perform high-speed runs (MAR)?
+
+---
+
+# Data Characteristics Checklist for Your CSV
+
+Before running analyses for your project, verify these 5 attributes:
+
+- [ ] **1. Granularity:** Is 1 row a season, game, possession, or frame?
+- [ ] **2. Data Types:** Are numerical columns parsed as numeric/double rather than character strings in R?
+- [ ] **3. Format Structure:** Is the dataset tidy (long format) for plotting and modeling?
+- [ ] **4. Range Limits:** Are all values within physiologically or rules-based bounds (e.g., `\(0-100\%\)` accuracy, realistic top speeds)?
+- [ ] **5. Missingness Audit:** Have you identified `NA` values and determined if they are random or structural?
+
+---
+
+# Summary &amp; Looking Ahead
+
+- **Today's Summary:**
+  - Sports data comes in complex types (nominal, ordinal, continuous, spatial, temporal).
+  - Understanding data characteristics prevents common analytical blunders (e.g., averaging ranks, misinterpreting sensor glitches as peak performance).
+  - Missingness in sports is rarely random—context matters.
+
+- **Looking Ahead (Next Class):**
+  - **Data Quality, Ethics &amp; Athlete Privacy:** Interrogating data validity, athlete data rights, bio-metric ownership, and ethical usage of fatigue tracking.
+
+- **Action Item:**
+  - Run `summary()`, `str()`, or `glimpse()` in R on your project CSV file and audit it against today's checklist!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
