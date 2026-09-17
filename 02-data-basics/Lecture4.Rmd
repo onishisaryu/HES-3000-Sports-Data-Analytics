@@ -1,5 +1,5 @@
 ---
-title: "Lecture 5"
+title: "Lecture 4"
 subtitle: "Athlete Data Privacy, Consent, and the Ethics of Tracking"
 author: Saryu Onishi
 date: HES 3000-002, Sport Performance Analytics
