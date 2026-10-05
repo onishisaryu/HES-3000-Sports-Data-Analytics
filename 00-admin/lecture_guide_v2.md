@@ -44,7 +44,7 @@
 
 ## Week 11: Athlete Profiling & Thresholds
 - Class 1: Athlete profiling using reference distributions. Students learn how percentiles, z-scores, T-scores, and STEN scores describe where an athlete falls relative to an appropriate comparison group. Emphasis on why relative standing does not automatically define a meaningful decision threshold.
-- Class 2: Using thresholds to inform training decisions. Students examine how benchmarks, individual baselines, and intended training ranges can be used to flag values that may require attention or action.
+- Class 2: Using thresholds to inform training decisions. Students examine how benchmarks, individual baselines, and intended training ranges can be used to flag values that may require attention or action. Example use case: Using historical patterns, a team sets a upper limit on the number of practice minutes per player to reduce risk of injury in their starters.
 
 ## Week 12: Fatigue Management & Game Decisions
 - Class 1: Using thresholds to monitor fatigue. Students compare fixed, population-based, and individualized thresholds for identifying meaningful changes in athlete status and discuss the limitations of binary flags.
