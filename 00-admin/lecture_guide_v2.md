@@ -31,23 +31,23 @@
 - Class 2: blank for now
 
 ## Week 8: Exploring Relationships & Prediction
-- Class 1: Understanding association and how variables move together in sports. Emphasis on why association does not necessarily indicate causation or provide a useful prediction.
-- Class 2: Case Study / Project Lab: Hands-on session exploring relationships among sports variables and identifying potentially meaningful patterns.
+- Class 1: Correlation and \(r\); simple regression using \(y=mx+b\); calculating predictions; association versus causation.
+- Class 2: Case Study / Project Lab: Guided case study: make a scatterplot, calculate correlation, fit a trend line, interpret the slope, and calculate a prediction.
 
-## Week 9: Regression Models & Interpretation
-- Class 1: Moving from correlation to predictive trend lines using simple linear regression.
-- Class 2: Interpreting regression output in a sports context and connecting model estimates to practical questions.
+## Week 9: Evaluating Predictions & Decisions
+- Class 1: what does an analysis actually justify? Consider relationship strength, variation around a trend, alternative explanations, and whether findings apply to the athlete or situation of interest.
+- Class 2: Ungraded discussion of analytics claims, implementation, evidence of success, what might have happened otherwise, and decision quality versus outcome quality.
 
 ## Week 10: Model Limits & Communication
-- Class 1: Assessing model error, understanding limitations, and avoiding over-fitting and overconfident conclusions.
+- Class 1: Intro to project. should have group, question and data by the end.
 - Class 2: Storytelling with data—translating analytical outputs for non-technical audiences (coaches, athletes, scouts, and GMs).
 
 ## Week 11: Athlete Profiling & Thresholds
-- Class 1: Athlete profiling using reference distributions. Students learn how percentiles, z-scores, T-scores, and STEN scores describe where an athlete falls relative to an appropriate comparison group. Emphasis on why relative standing does not automatically define a meaningful decision threshold.
-- Class 2: Using thresholds to inform training decisions. Students examine how benchmarks, individual baselines, and intended training ranges can be used to flag values that may require attention or action. Example use case: Using historical patterns, a team sets a upper limit on the number of practice minutes per player to reduce risk of injury in their starters.
+- Class 1: Athlete profiling using reference distributions. Students learn how percentiles, z-scores (T-scores, and STEN scores extra) describe where an athlete falls relative to an appropriate comparison group. Emphasis on why relative standing does not automatically define a meaningful decision threshold.
+- Class 2: comparison and targets to inform training decisions. Students examine how benchmarks, individual baselines, and intended training ranges can be used to flag values that may require attention or action. Example use case: Using historical patterns, a team sets a upper limit on the number of practice minutes per player to reduce risk of injury in their starters.
 
 ## Week 12: Fatigue Management & Game Decisions
-- Class 1: Using thresholds to monitor fatigue. Students compare fixed, population-based, and individualized thresholds for identifying meaningful changes in athlete status and discuss the limitations of binary flags.
+- Class 1: Using thresholds and change over time to monitor fatigue. Students compare fixed, population-based, and individualized thresholds for identifying meaningful changes in athlete status and discuss the limitations of binary flags.
 - Class 2: Using conditional and situational probabilities to evaluate game decisions under uncertainty.
 
 ## Week 13: Expected Value & Analytics Challenges
